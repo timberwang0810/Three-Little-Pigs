@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8482279174659856532}
   - component: {fileID: -6614708455104859535}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StrawHut
-  m_TagString: Untagged
+  m_TagString: Hut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
