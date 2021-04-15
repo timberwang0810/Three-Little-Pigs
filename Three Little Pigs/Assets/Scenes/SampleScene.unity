@@ -969,6 +969,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4821399593152536271, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821399593152536271, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821399593152536271, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987732739083310045, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1373,4 +1389,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 795cd015997074ceba5378d1f200e15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 5
