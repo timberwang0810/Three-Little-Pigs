@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 775910969199753625}
   - component: {fileID: 775910969199753624}
   - component: {fileID: 8685865314268428791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TurnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,3 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa1e4834b4a447e5899a82f9a007e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnDirection: 0
+  leftAngleInDegrees: 0
+  rightAngleInDegrees: 0

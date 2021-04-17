@@ -21,7 +21,7 @@ public class Hut : MonoBehaviour
         {
             isDestroyed = true;
             Debug.Log("hut dead");
-            // TODO: GameManager.S.OnLevelComplete?
+            GameManager.S.OnHutDestroyed();
             Destroy(this.gameObject, 1.0f);
         }
     }
