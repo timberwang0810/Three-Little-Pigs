@@ -39,6 +39,34 @@ public class Wolf : MonoBehaviour
         }
     }
 
+    public void Turn(Direction dir, float leftAngle, float rightAngle)
+    {
+        switch (dir)
+        {
+            case Direction.LEFT:
+                RotateByDegrees(leftAngle);
+                break;
+            case Direction.RIGHT:
+                RotateByDegrees(-rightAngle);
+                break;
+            case Direction.EITHER:
+                float r = Random.Range(0, 1.0f);
+                if (r < 0.5f) RotateByDegrees(leftAngle);
+                else RotateByDegrees(-rightAngle);
+                break;
+            default:
+                return;
+        }
+    }
+
+    private void RotateByDegrees(float degree)
+    {
+        Vector2 newDir = currDirection;
+        newDir.x = currDirection.x * Mathf.Cos(Mathf.Deg2Rad * degree) - currDirection.y * Mathf.Sin(Mathf.Deg2Rad * degree);
+        newDir.y = currDirection.x * Mathf.Sin(Mathf.Deg2Rad * degree) + currDirection.y * Mathf.Cos(Mathf.Deg2Rad * degree);
+        currDirection = newDir;
+    }
+
     private void FixedUpdate()
     {
         rb.velocity = currDirection * speed;
