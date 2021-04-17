@@ -26,7 +26,6 @@ public class Wolf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void TakeDamage(float damage)
@@ -35,6 +34,7 @@ public class Wolf : MonoBehaviour
         if (currHP <= damage)
         {
             speed = 0;
+            GameManager.S.OnEnemyDeath();
             Destroy(this.gameObject, 1.0f);
         }
     }
@@ -69,6 +69,7 @@ public class Wolf : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GameManager.S.gameState != GameManager.GameState.playing) return;
         rb.velocity = currDirection * speed;
     }
 
@@ -88,6 +89,5 @@ public class Wolf : MonoBehaviour
             hut.TakeDamage(power);
             yield return new WaitForSeconds(attackCooldown);
         }
-        Debug.Log("Wolf Won");
     }
 }
