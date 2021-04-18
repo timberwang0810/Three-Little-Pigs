@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wolf : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Wolf : MonoBehaviour
     public float speed;
     public float attackCooldown;
     public Vector2 initialDirection;
+    public SpriteRenderer healthBarFill;
+    public Color maxHealthColor;
+    public Color minHealthColor;
 
     private float currHP;
     private Rigidbody2D rb;
@@ -21,6 +25,8 @@ public class Wolf : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currDirection = initialDirection;
         currDirection.Normalize();
+        healthBarFill.transform.localScale = new Vector3(1, 1, 1);
+        healthBarFill.color = maxHealthColor;
     }
 
     // Update is called once per frame
@@ -31,6 +37,8 @@ public class Wolf : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currHP -= damage;
+        healthBarFill.transform.localScale = new Vector3(currHP / maxHP, 1, 1);
+        healthBarFill.color = Color.Lerp(minHealthColor, maxHealthColor, currHP / maxHP);
         if (currHP <= damage)
         {
             speed = 0;
