@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wolf : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Wolf : MonoBehaviour
     public Vector2 initialDirection;
 
     private float currHP;
+    private HealthBar healthBar;
     private Rigidbody2D rb;
     private Vector2 currDirection;
 
@@ -21,6 +23,7 @@ public class Wolf : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currDirection = initialDirection;
         currDirection.Normalize();
+        healthBar = GetComponentInChildren<HealthBar>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class Wolf : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currHP -= damage;
+        healthBar.AdjustFillAmount(currHP, maxHP);
         if (currHP <= damage)
         {
             speed = 0;
