@@ -103,6 +103,9 @@ MonoBehaviour:
   speed: 2
   attackCooldown: 1
   initialDirection: {x: -1, y: 0}
+  healthBarFill: {fileID: 2257759259076087113}
+  maxHealthColor: {r: 0.052075934, g: 0.9622642, b: 0.022694906, a: 1}
+  minHealthColor: {r: 0.9716981, g: 0.01375042, b: 0.01375042, a: 1}
 --- !u!50 &4821399593152536271
 Rigidbody2D:
   serializedVersion: 4
