@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
     public void OnEnemyDeath()
     {
         numEnemies--;
+        money += 50;
+        moneyText.text = money.ToString();
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
     }
 

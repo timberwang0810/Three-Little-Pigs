@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    private bool building = true;
+    private bool building = true; //for placing
+    private bool loading = true; //for load anim
     private SpriteRenderer renderer;
+    private Animator animator;
 
     public float shootInterval;
     private float shootTimer = 0f;
@@ -19,13 +21,15 @@ public class Turret : MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         renderer.color = Color.red;
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
         shootTimer = shootInterval;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.S.gameState != GameManager.GameState.playing || building) return;
+        if (GameManager.S.gameState != GameManager.GameState.playing || loading) return;
 
         shootTimer += Time.deltaTime;
 
@@ -41,6 +45,7 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
+        animator.SetTrigger("shoot");
         Vector3 dir = enemyInRange.transform.position - transform.position;
         GameObject projectile = Instantiate(projectileObject, transform.position, Quaternion.identity);
         projectile.GetComponent<Rigidbody2D>().velocity = dir * 7;
@@ -68,8 +73,16 @@ public class Turret : MonoBehaviour
         {
             building = false;
             renderer.color = Color.white;
+            animator.enabled = true;
+            animator.SetBool("load", true);
             return true;
         }
         return false;
+    }
+
+    public void SetBuildDone()
+    {
+        animator.SetBool("load", false);
+        loading = false;
     }
 }
