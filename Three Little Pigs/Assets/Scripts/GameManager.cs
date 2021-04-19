@@ -56,17 +56,20 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemiesFinishedSpawning()
     {
+        Debug.Log("done spawning");
         isSpawning = false;
     }
 
     public void OnEnemySpawned()
     {
         numEnemies++;
+        Debug.Log("spawned " + numEnemies);
     }
 
     public void OnEnemyDeath()
     {
         numEnemies--;
+        Debug.Log("died " + numEnemies);
         money += 50;
         moneyText.text = money.ToString();
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();

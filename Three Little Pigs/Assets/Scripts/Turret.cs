@@ -37,6 +37,13 @@ public class Turret : MonoBehaviour
         {
             if (enemyInRange != null)
             {
+                bool living = enemyInRange.GetComponent<CapsuleCollider2D>().enabled;
+                if (!living)
+                {
+                    enemyInRange = null;
+                    return;
+                }
+
                 Shoot();
                 shootTimer = 0f;
             }

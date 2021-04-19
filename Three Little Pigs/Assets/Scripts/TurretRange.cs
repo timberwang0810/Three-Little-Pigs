@@ -18,7 +18,14 @@ public class TurretRange : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy") transform.parent.GetComponent<Turret>().enemyInRange = collision.gameObject;
+        if (collision.gameObject.tag == "Enemy") {
+
+            bool living = collision.gameObject.GetComponent<CapsuleCollider2D>().enabled;
+
+            if (transform.parent.GetComponent<Turret>().enemyInRange == null && living) {
+                transform.parent.GetComponent<Turret>().enemyInRange = collision.gameObject;
+            }
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
