@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3454794957744622968}
   - component: {fileID: 2198189152597393127}
   - component: {fileID: 4299066702312634399}
+  - component: {fileID: 6383598028729652056}
   m_Layer: 0
   m_Name: Turret1
   m_TagString: Turret
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 63a062f4fad8ac0458e8ff20f1f486bc, type: 3}
+  m_Sprite: {fileID: 1063575581726255627, guid: b2e7c3ca63502c64d8588f1b8a8a3ac6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,6 +139,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6383598028729652056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160106325326648143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6781ad1682ea39648b62d5afa373e622, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9015690951452837171
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,9 @@ public class Wolf : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 currDirection;
 
+    private Animator animator;
+    private SpriteRenderer renderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,15 @@ public class Wolf : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currDirection = initialDirection;
         currDirection.Normalize();
+        
+        renderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        animator.SetBool("walking", true);
+
+        if (currDirection.x == -1)
+        {
+            renderer.flipX = true;
+        }
     }
 
     // Update is called once per frame
@@ -31,10 +43,11 @@ public class Wolf : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currHP -= damage;
-        if (currHP <= damage)
+        if (currHP <= 0)
         {
             speed = 0;
             GameManager.S.OnEnemyDeath();
+            animator.SetTrigger("die");
             Destroy(this.gameObject, 1.0f);
         }
     }
@@ -65,6 +78,16 @@ public class Wolf : MonoBehaviour
         newDir.x = currDirection.x * Mathf.Cos(Mathf.Deg2Rad * degree) - currDirection.y * Mathf.Sin(Mathf.Deg2Rad * degree);
         newDir.y = currDirection.x * Mathf.Sin(Mathf.Deg2Rad * degree) + currDirection.y * Mathf.Cos(Mathf.Deg2Rad * degree);
         currDirection = newDir;
+
+        if (currDirection.x == -1)
+        {
+            renderer.flipX = true;
+        }
+
+        if (currDirection.x == 1)
+        {
+            renderer.flipX = false;
+        }
     }
 
     private void FixedUpdate()
@@ -77,6 +100,7 @@ public class Wolf : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Hut"))
         {
+            animator.SetBool("walking", false);
             speed = 0;
             StartCoroutine(AttackHut(collision.gameObject.GetComponent<Hut>()));
         }
@@ -86,6 +110,7 @@ public class Wolf : MonoBehaviour
     {
         while (hut != null)
         {
+            animator.SetTrigger("attack");
             hut.TakeDamage(power);
             yield return new WaitForSeconds(attackCooldown);
         }
