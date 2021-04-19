@@ -47,11 +47,12 @@ public class Wolf : MonoBehaviour
     {
         currHP -= damage;
         healthBar.AdjustFillAmount(currHP, maxHP);
-        if (currHP <= damage)
+        if (currHP <= 0)
         {
             speed = 0;
-            GameManager.S.OnEnemyDeath();
+            healthBar.AdjustFillAmount(0, maxHP);
             animator.SetTrigger("die");
+            GameManager.S.OnEnemyDeath();
             Destroy(this.gameObject, 1.0f);
         }
     }

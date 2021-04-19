@@ -68,6 +68,7 @@ public class Spawner : MonoBehaviour
         {
             enemyPrefab = maxEnemies.ElementAt(Random.Range(0, maxEnemies.Count())).Key;
         }
+        Debug.Log("spawned");
         // Instantiate enemy at spawn location
         GameObject enemy = Instantiate(enemyPrefab, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
         enemy.GetComponent<Wolf>().initialDirection = spawnDirection;

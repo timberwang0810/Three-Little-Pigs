@@ -30,6 +30,7 @@ public class Hut : MonoBehaviour
         if (currHP <= damage)
         {
             isDestroyed = true;
+            healthBar.fillAmount = 0;
             Debug.Log("hut dead");
             GameManager.S.OnHutDestroyed();
             Destroy(this.gameObject, 1.0f);

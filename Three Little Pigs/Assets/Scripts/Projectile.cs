@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Wolf>().TakeDamage(damage);
-            Destroy(this.gameObject, 0.1f);
+            Destroy(this.gameObject);
         }
     }
 }
