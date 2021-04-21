@@ -1,22 +1,55 @@
 fileFormatVersion: 2
-guid: b2e7c3ca63502c64d8588f1b8a8a3ac6
+guid: 0f26ef214e8c540438c9d6ce5c05f3c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1063575581726255627
-    second: strawturret_idle_0
+      213: 6452419766546888201
+    second: woodturret_loading_0
   - first:
-      213: 1764698649932848241
-    second: strawturret_idle_1
+      213: -2342516052882723884
+    second: woodturret_loading_1
   - first:
-      213: 2299973378188439303
-    second: strawturret_idle_2
+      213: 8713552876971298623
+    second: woodturret_loading_2
   - first:
-      213: -1531265570854040894
-    second: strawturret_idle_3
+      213: -1457393047621613033
+    second: woodturret_loading_3
   - first:
-      213: -7229086687706627234
-    second: strawturret_idle_4
+      213: 6025900143198518842
+    second: woodturret_loading_4
+  - first:
+      213: -8056063192298626003
+    second: woodturret_loading_5
+  - first:
+      213: 4889064482492724690
+    second: woodturret_loading_6
+  - first:
+      213: 1801861368529914072
+    second: woodturret_loading_7
+  - first:
+      213: -5400875147748099244
+    second: woodturret_loading_8
+  - first:
+      213: 462135722302378231
+    second: woodturret_loading_9
+  - first:
+      213: 3198408505407632023
+    second: woodturret_loading_10
+  - first:
+      213: -3998810201400031037
+    second: woodturret_loading_11
+  - first:
+      213: 2363656606310748770
+    second: woodturret_loading_12
+  - first:
+      213: -1715855624893748122
+    second: woodturret_loading_13
+  - first:
+      213: -1567896345675403568
+    second: woodturret_loading_14
+  - first:
+      213: -7511119387965601650
+    second: woodturret_loading_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +94,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 310
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +111,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -90,7 +123,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -102,7 +135,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -116,106 +149,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: strawturret_idle_0
+      name: woodturret_loading_1
       rect:
         serializedVersion: 2
-        x: 140
+        x: 17
         y: 0
-        width: 365
+        width: 633
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50145745, y: 0.5056387}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0aa2944b5492ce00800000000000000
-      internalID: 1063575581726255627
+      spriteID: 4db6643af06bd7fd0800000000000000
+      internalID: -2342516052882723884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_1
+      name: woodturret_loading_3
       rect:
         serializedVersion: 2
-        x: 513
+        x: 951
         y: 0
-        width: 365
+        width: 633
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50680256, y: 0.5051261}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17cdbd482187d7810800000000000000
-      internalID: 1764698649932848241
+      spriteID: 71ac36aaebc46cbe0800000000000000
+      internalID: -1457393047621613033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_2
+      name: woodturret_loading_5
       rect:
         serializedVersion: 2
-        x: 940
+        x: 1940
         y: 0
-        width: 365
+        width: 633
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5019439, y: 0.5051261}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70fe6c70a952bef10800000000000000
-      internalID: 2299973378188439303
+      spriteID: d24e0fe953d133090800000000000000
+      internalID: -8056063192298626003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_3
+      name: woodturret_loading_7
       rect:
         serializedVersion: 2
-        x: 1342
+        x: 2847
         y: 0
-        width: 365
+        width: 633
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49708536, y: 0.5046135}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca8578831adfbae0800000000000000
-      internalID: -1531265570854040894
+      spriteID: 8d889b53e5f710910800000000000000
+      internalID: 1801861368529914072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_4
+      name: woodturret_loading_9
       rect:
         serializedVersion: 2
-        x: 1779
+        x: 3834
         y: 0
-        width: 365
-        height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 633
+        height: 599
+      alignment: 9
+      pivot: {x: 0.49562785, y: 0.50564814}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e53cdb875ff1dab90800000000000000
-      internalID: -7229086687706627234
+      spriteID: 7f01addadf5d96600800000000000000
+      internalID: 462135722302378231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodturret_loading_11
+      rect:
+        serializedVersion: 2
+        x: 4727
+        y: 0
+        width: 633
+        height: 600
+      alignment: 9
+      pivot: {x: 0.49659976, y: 0.5046135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8c755fe4f5188c0800000000000000
+      internalID: -3998810201400031037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodturret_loading_13
+      rect:
+        serializedVersion: 2
+        x: 5718
+        y: 0
+        width: 633
+        height: 600
+      alignment: 9
+      pivot: {x: 0.50048673, y: 0.5051261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c2a50766e0038e0800000000000000
+      internalID: -1715855624893748122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodturret_loading_15
+      rect:
+        serializedVersion: 2
+        x: 6709
+        y: 0
+        width: 633
+        height: 600
+      alignment: 9
+      pivot: {x: 0.5044493, y: 0.504694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88c2c656b423c790800000000000000
+      internalID: -7511119387965601650
       vertices: []
       indices: 
       edges: []

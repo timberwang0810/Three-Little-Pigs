@@ -70,14 +70,14 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemiesFinishedSpawning()
     {
-        Debug.Log("done spawning");
+        //Debug.Log("done spawning");
         isSpawning = false;
     }
 
     public void OnEnemySpawned()
     {
         numEnemies++;
-        Debug.Log("spawned " + numEnemies);
+        //Debug.Log("spawned " + numEnemies);
     }
 
     public void OnEnemyDeath()
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
     public void OnHutDestroyed()
     {
         gameState = GameState.oops;
-        Debug.Log("hut gone");
+        //Debug.Log("hut gone");
         // TODO: if it's the brick hut, call OnLevelLost()
         if (LevelManager.S.isFinalLevel) OnLevelLost();
         else OnLevelCleared();

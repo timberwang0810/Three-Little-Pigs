@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
     private float shootTimer = 0f;
 
     public GameObject projectileObject;
+    public float projectileSpeed;
 
     public GameObject enemyInRange;
 
@@ -20,7 +21,7 @@ public class Turret : MonoBehaviour
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
-        renderer.color = Color.red;
+        renderer.color = Color.green;
         animator = GetComponent<Animator>();
         animator.enabled = false;
         shootTimer = shootInterval;
@@ -55,13 +56,13 @@ public class Turret : MonoBehaviour
         animator.SetTrigger("shoot");
         Vector3 dir = enemyInRange.transform.position - transform.position;
         GameObject projectile = Instantiate(projectileObject, transform.position, Quaternion.identity);
-        projectile.GetComponent<Rigidbody2D>().velocity = dir * 7;
+        projectile.GetComponent<Rigidbody2D>().velocity = dir * projectileSpeed;
         Destroy(projectile, 5f);
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlaceableArea" && building) renderer.color = Color.green;
+        if (collision.gameObject.tag == "UnplaceableArea" && building) renderer.color = Color.red;
 
         if (collision.gameObject.tag == "Turret" && building) renderer.color = Color.red;
     }
@@ -70,7 +71,7 @@ public class Turret : MonoBehaviour
     {
         if (collision.gameObject.tag == "Turret" && building) renderer.color = Color.green;
 
-        if (collision.gameObject.tag == "PlaceableArea" && building) renderer.color = Color.red;
+        if (collision.gameObject.tag == "UnplaceableArea" && building) renderer.color = Color.green;
     }
 
     // return true on success
@@ -78,6 +79,7 @@ public class Turret : MonoBehaviour
     {
         if (renderer.color == Color.green)
         {
+            GetComponent<CapsuleCollider2D>().isTrigger = false;
             building = false;
             renderer.color = Color.white;
             animator.enabled = true;
