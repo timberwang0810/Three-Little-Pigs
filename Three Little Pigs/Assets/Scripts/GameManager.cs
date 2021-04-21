@@ -131,6 +131,6 @@ public class GameManager : MonoBehaviour
     private void FloodEnemies()
     {
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
-        gameState = GameState.oops;
+        LevelManager.S.currLevelSpawner.Flood();
     }
 }
