@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isSpawning = true;
-        StartNewGame(); //TODO: DELETE WHEN LEVELMANAGER IS IMPLEMENTED
+        //StartNewGame();
     }
 
     // Update is called once per frame
@@ -94,19 +94,22 @@ public class GameManager : MonoBehaviour
         gameState = GameState.oops;
         Debug.Log("hut gone");
         // TODO: if it's the brick hut, call OnLevelLost()
-        OnLevelCleared();
+        if (LevelManager.S.isFinalLevel) OnLevelLost();
+        else OnLevelCleared();
     }
 
     private void OnEnemiesCleared()
     {
         Debug.Log("level complete!");
         // TODO: if it's the brick hut, call OnLevelWon()
-        FloodEnemies();
+        if (LevelManager.S.isFinalLevel) OnLevelWon();
+        else FloodEnemies();
     }
 
     private void OnLevelCleared()
     {
         // TODO: Go to next level stuff
+        LevelManager.S.GoToNextLevel();
     }
 
     private void OnLevelWon()
