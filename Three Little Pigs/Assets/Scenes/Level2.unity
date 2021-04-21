@@ -477,9 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a9088f2a6854184bb77718a5a8d6cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currLevel: 0
-  currLevelName: 
+  currLevel: 2
+  currLevelName: Level 2
   isFinalLevel: 0
+  currLevelSpawner: {fileID: 133690186879634530}
 --- !u!4 &189670770
 Transform:
   m_ObjectHideFlags: 0
@@ -4418,6 +4419,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+--- !u!114 &133690186879634530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+  m_PrefabInstance: {fileID: 133690186879634529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5236b98f6e6d34a75895378688fc6399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &775910969653233174
 PrefabInstance:
   m_ObjectHideFlags: 0

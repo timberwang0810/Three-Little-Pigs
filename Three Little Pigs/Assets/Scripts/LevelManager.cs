@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public int currLevel;
     public string currLevelName;
     public bool isFinalLevel = false;
+    public Spawner currLevelSpawner;
 
     private void Awake()
     {

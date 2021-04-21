@@ -24,6 +24,7 @@ public class Spawner : MonoBehaviour
     private Dictionary<string, int> currEnemies = new Dictionary<string, int>();
     private int numEnemiesToSpawn;
     private float cooldownTimer;
+    private bool isFlooding = false;
 
 
     // Start is called before the first frame update
@@ -46,25 +47,31 @@ public class Spawner : MonoBehaviour
     {
         if (GameManager.S.gameState != GameManager.GameState.playing) return;
         cooldownTimer += Time.deltaTime;
-        if (cooldownTimer >= timeBetweenEnemySpawn && numEnemiesToSpawn >= 0)
+        if (cooldownTimer >= timeBetweenEnemySpawn && (numEnemiesToSpawn >= 0 || isFlooding))
         {
             SpawnOneEnemy();
             cooldownTimer = 0;
         }
     }
 
+    public void Flood()
+    {
+        isFlooding = true;
+        timeBetweenEnemySpawn = 0.5f;
+    }
+
     // Spawn a random enemy type dictated by the level description in LevelManager
     private void SpawnOneEnemy()
     {
-        if (numEnemiesToSpawn <= 0)
+        if (numEnemiesToSpawn <= 0 && !isFlooding)
         {
             GameManager.S.OnEnemiesFinishedSpawning();
             return;
         }
-       
+
         // Choose a random enemy type
         GameObject enemyPrefab = maxEnemies.ElementAt(Random.Range(0, maxEnemies.Count())).Key;
-        while (currEnemies[enemyPrefab.name] >= maxEnemies[enemyPrefab])
+        while (!isFlooding && currEnemies[enemyPrefab.name] >= maxEnemies[enemyPrefab])
         {
             enemyPrefab = maxEnemies.ElementAt(Random.Range(0, maxEnemies.Count())).Key;
         }
@@ -72,8 +79,11 @@ public class Spawner : MonoBehaviour
         // Instantiate enemy at spawn location
         GameObject enemy = Instantiate(enemyPrefab, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
         enemy.GetComponent<Wolf>().initialDirection = spawnDirection;
-        currEnemies[enemyPrefab.name] += 1;
-        numEnemiesToSpawn--;
-        GameManager.S.OnEnemySpawned();
+        if (!isFlooding)
+        {
+            currEnemies[enemyPrefab.name] += 1;
+            numEnemiesToSpawn--;
+            GameManager.S.OnEnemySpawned();
+        }   
     }
 }
