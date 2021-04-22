@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: b2e7c3ca63502c64d8588f1b8a8a3ac6
+guid: 8a5376826c2669c468538bad5c308bb9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1063575581726255627
-    second: strawturret_idle_0
+      213: -2733355256147886009
+    second: woodturret_attack_0
   - first:
-      213: 1764698649932848241
-    second: strawturret_idle_1
+      213: 6316289593475897387
+    second: woodturret_attack_1
   - first:
-      213: 2299973378188439303
-    second: strawturret_idle_2
+      213: 4672345730771690105
+    second: woodturret_attack_2
   - first:
-      213: -1531265570854040894
-    second: strawturret_idle_3
+      213: -7102249661585457805
+    second: woodturret_attack_3
   - first:
-      213: -7229086687706627234
-    second: strawturret_idle_4
+      213: 8624056645415136720
+    second: woodturret_attack_4
+  - first:
+      213: -2914764458792596600
+    second: woodturret_attack_5
+  - first:
+      213: 8076957073537732209
+    second: woodturret_attack_6
+  - first:
+      213: -3182264720886047081
+    second: woodturret_attack_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 310
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +87,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -90,7 +99,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -102,7 +111,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -116,97 +125,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: strawturret_idle_0
+      name: woodturret_attack_0
       rect:
         serializedVersion: 2
-        x: 140
+        x: 23
         y: 0
-        width: 365
+        width: 719
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.558046, y: 0.412}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0aa2944b5492ce00800000000000000
-      internalID: 1063575581726255627
+      spriteID: 740cb5060eb211ad0800000000000000
+      internalID: -2733355256147886009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_1
+      name: woodturret_attack_1
       rect:
         serializedVersion: 2
-        x: 513
+        x: 752
         y: 0
-        width: 365
+        width: 719
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5637239, y: 0.412}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17cdbd482187d7810800000000000000
-      internalID: 1764698649932848241
+      spriteID: b2890ad8be7f7a750800000000000000
+      internalID: 6316289593475897387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_2
+      name: woodturret_attack_2
       rect:
         serializedVersion: 2
-        x: 940
+        x: 1649
         y: 0
-        width: 365
+        width: 719
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.55949765, y: 0.412}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70fe6c70a952bef10800000000000000
-      internalID: 2299973378188439303
+      spriteID: 972a57edfa187d040800000000000000
+      internalID: 4672345730771690105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_3
+      name: woodturret_attack_3
       rect:
         serializedVersion: 2
-        x: 1342
+        x: 2627
         y: 0
-        width: 365
+        width: 719
         height: 600
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5852533, y: 0.412}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca8578831adfbae0800000000000000
-      internalID: -1531265570854040894
+      spriteID: 37d7f07ef8dbf6d90800000000000000
+      internalID: -7102249661585457805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawturret_idle_4
+      name: woodturret_attack_5
       rect:
         serializedVersion: 2
-        x: 1779
+        x: 3629
         y: 0
-        width: 365
+        width: 719
         height: 600
+      alignment: 9
+      pivot: {x: 0.57631075, y: 0.412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bcbb5fa2dac87d0800000000000000
+      internalID: -2914764458792596600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodturret_attack_7
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 83
+        width: 5
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e53cdb875ff1dab90800000000000000
-      internalID: -7229086687706627234
+      spriteID: 79e5452c81356d3d0800000000000000
+      internalID: -3182264720886047081
       vertices: []
       indices: 
       edges: []

@@ -7,6 +7,12 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager S;
 
+    public int gridWidth;
+    public int gridHeight;
+
+    private float worldHeight;
+    private float worldWidth;
+
     [Serializable]
     public struct TurretInfo
     {
@@ -18,7 +24,7 @@ public class BuildManager : MonoBehaviour
     public Dictionary<string, TurretInfo> turrets;
 
     private GameObject building = null;
-    private int currentCost = 0;
+    private TurretInfo currentTurret;
 
     private void Awake()
     {
@@ -37,7 +43,9 @@ public class BuildManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       turrets = new Dictionary<string, TurretInfo>();
+        worldHeight = Camera.main.orthographicSize * 2.0f;
+        worldWidth = worldHeight * Screen.width / Screen.height;
+        turrets = new Dictionary<string, TurretInfo>();
         foreach (TurretInfo t in turretArray)
         {
             turrets.Add(t.name, t);
@@ -50,14 +58,24 @@ public class BuildManager : MonoBehaviour
         if (building != null)
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            building.transform.position = new Vector3(pos.x, pos.y, 0);
+            if (currentTurret.name == "straw")
+            {
+                int x = (int) Mathf.Floor(pos.x);
+                int y = (int) Mathf.Ceil(pos.y);
+                building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y - worldHeight / (gridHeight * 2), 0);
+            } else if (currentTurret.name == "wood")
+            {
+                int x = (int)Mathf.Floor(pos.x);
+                int y = (int)Mathf.Floor(pos.y);
+                building.transform.position = new Vector3(x, y, 0);
+            }
+            
 
             if (Input.GetMouseButtonDown(0))
             {
                 if (building.GetComponent<Turret>().BuildTurret())
                 {
-                    GameManager.S.SubtractMoney(currentCost);
+                    GameManager.S.SubtractMoney(currentTurret.cost);
                     building = null;
                 }
             }
@@ -72,12 +90,10 @@ public class BuildManager : MonoBehaviour
 
     public void btn_BuildTurret(string name)
     {
-        if (building) return;
-
         TurretInfo turretType = turrets[name];
         if (GameManager.S.money >= turretType.cost)
         {
-            currentCost = turretType.cost;
+            currentTurret = turretType;
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             building = Instantiate(turretType.turretObject, new Vector3(pos.x, pos.y, 0), Quaternion.identity);
         }
