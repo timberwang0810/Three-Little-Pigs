@@ -13,6 +13,10 @@ public class ButtonManager : MonoBehaviour
 
     public void btn_StartTheGame()
     {
+        if (GameManager.S) Destroy(GameManager.S.gameObject);
+        if (UIManager.S) Destroy(UIManager.S.gameObject);
+        //if (SoundManager.S) Destroy(SoundManager.S.gameObject); //TODO: Uncomment
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level1");
         Destroy(this.gameObject);
     }
