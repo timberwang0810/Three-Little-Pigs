@@ -54,8 +54,8 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator FlashMoneyText(GameObject moneyFlashTextObject)
     {
-        Color opaque = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        Color transparent = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        Color opaque = new Color(255.0f, 255.0f, 0.0f, 1.0f);
+        Color transparent = new Color(255.0f, 255.0f, 0.0f, 0.0f);
         TextMeshPro text = moneyFlashTextObject.GetComponent<TextMeshPro>();
         float timer = 0;
         while (timer < 1)
