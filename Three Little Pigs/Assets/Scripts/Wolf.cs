@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Wolf : MonoBehaviour
 {
     public float maxHP;
+    public int money;
     public float power;
     public float speed;
     public float attackCooldown;
@@ -52,7 +53,8 @@ public class Wolf : MonoBehaviour
             speed = 0;
             healthBar.AdjustFillAmount(0, maxHP);
             animator.SetTrigger("die");
-            GameManager.S.OnEnemyDeath();
+            GameManager.S.OnEnemyDeath(money);
+            UIManager.S.ShowMoneyFlashText(money, transform.position);
             Destroy(this.gameObject, 1.0f);
         }
     }
