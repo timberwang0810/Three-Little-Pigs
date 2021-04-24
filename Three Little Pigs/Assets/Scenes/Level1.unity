@@ -2627,6 +2627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4132d9e00587c4b719882fa4751aa785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyFlashText: {fileID: 3494894396540593000, guid: 29b70d8ac8db041279d0aa395de09e64, type: 3}
   pausePanel: {fileID: 83956053}
 --- !u!4 &1149410206
 Transform:

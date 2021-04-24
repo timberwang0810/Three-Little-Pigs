@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this);
         isSpawning = true;
         //StartNewGame();
     }
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
     public void StartNewGame()
     {
         gameState = GameState.getReady;
+        UIManager.S.HideAll();
         ResetLevel();
     }
 
@@ -80,11 +82,11 @@ public class GameManager : MonoBehaviour
         //Debug.Log("spawned " + numEnemies);
     }
 
-    public void OnEnemyDeath()
+    public void OnEnemyDeath(int amount)
     {
         numEnemies--;
         Debug.Log("died " + numEnemies);
-        money += 50;
+        money += amount;
         moneyText.text = money.ToString();
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
     }
@@ -109,7 +111,7 @@ public class GameManager : MonoBehaviour
     private void OnLevelCleared()
     {
         // TODO: Go to next level stuff
-        LevelManager.S.GoToNextLevel();
+        StartCoroutine(LevelCompleteCoroutine());
     }
 
     private void OnLevelWon()
@@ -132,5 +134,11 @@ public class GameManager : MonoBehaviour
     {
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
         LevelManager.S.currLevelSpawner.Flood();
+    }
+
+    private IEnumerator LevelCompleteCoroutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+        LevelManager.S.GoToNextLevel();
     }
 }
