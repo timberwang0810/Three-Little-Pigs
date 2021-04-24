@@ -76,7 +76,7 @@ public class Spawner : MonoBehaviour
         }
         // Instantiate enemy at spawn location
         GameObject enemy = Instantiate(enemyPrefab, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
-        enemy.GetComponent<Wolf>().initialDirection = spawnDirection;
+        enemy.GetComponent<Enemy>().initialDirection = spawnDirection;
         if (!isFlooding)
         {
             currEnemies[enemyPrefab.name] += 1;

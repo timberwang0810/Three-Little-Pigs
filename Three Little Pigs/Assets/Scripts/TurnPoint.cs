@@ -16,7 +16,7 @@ public class TurnPoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Wolf>().Turn(turnDirection, leftAngleInDegrees, rightAngleInDegrees);
+            collision.gameObject.GetComponent<Enemy>().Turn(turnDirection, leftAngleInDegrees, rightAngleInDegrees);
         }
     }
 }
