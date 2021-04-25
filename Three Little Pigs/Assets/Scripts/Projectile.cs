@@ -8,9 +8,10 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("call from parent");
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Wolf>().TakeDamage(damage);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
     }

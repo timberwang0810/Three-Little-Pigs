@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Wolf : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float maxHP;
     public float power;
@@ -108,6 +108,11 @@ public class Wolf : MonoBehaviour
             animator.SetBool("walking", false);
             speed = 0;
             StartCoroutine(AttackHut(collision.gameObject.GetComponent<Hut>()));
+        }
+
+        if (collision.gameObject.CompareTag("Projectile")) //splash damage
+        {
+            TakeDamage(collision.gameObject.GetComponent<Brick>().splashDamage);
         }
     }
 

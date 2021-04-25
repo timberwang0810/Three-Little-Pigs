@@ -68,6 +68,11 @@ public class BuildManager : MonoBehaviour
                 int x = (int)Mathf.Floor(pos.x);
                 int y = (int)Mathf.Floor(pos.y);
                 building.transform.position = new Vector3(x, y, 0);
+            } else if (currentTurret.name == "brick")
+            {
+                int x = (int)Mathf.Floor(pos.x);
+                int y = (int)Mathf.Ceil(pos.y);
+                building.transform.position = new Vector3(x, y - worldHeight / (gridHeight * 2), 0);
             }
             
 
