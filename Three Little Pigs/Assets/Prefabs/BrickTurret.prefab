@@ -121,6 +121,7 @@ MonoBehaviour:
   shootInterval: 5
   projectileObject: {fileID: 4956111570309925919, guid: 6afae4d4dd446044c829e7d745119b48, type: 3}
   projectileSpeed: 7
+  material: 2
   enemyInRange: {fileID: 0}
 --- !u!50 &5565360235998971794
 Rigidbody2D:

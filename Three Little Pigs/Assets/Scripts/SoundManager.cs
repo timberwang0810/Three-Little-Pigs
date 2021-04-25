@@ -6,7 +6,6 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager S;
 
-
     // played once upon building.
     public AudioClip TurretBuildSFX;
 
@@ -25,13 +24,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip BearHitSFX;
     public AudioClip FoxHitSFX;
 
-
     // enemy death sfx
     public AudioClip WolfDeathSFX;
     public AudioClip BearDeathSFX;
     public AudioClip FoxDeathSFX;
 
-
+    private AudioSource audio;
 
     private void Awake()
     {
@@ -49,12 +47,25 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MakeFireTurretSound(Material mat)
     {
-        
+        switch (mat)
+        {
+            case Material.STRAW:
+                audio.PlayOneShot(StrawTurretFireSFX);
+                break;
+            case Material.WOOD:
+                audio.PlayOneShot(WoodTurretFireSFX);
+                break;
+            case Material.BRICK:
+                audio.PlayOneShot(BrickTurretFireSFX);
+                break;
+            default:
+                audio.PlayOneShot(StrawTurretFireSFX);
+                break;
+        }
     }
 }

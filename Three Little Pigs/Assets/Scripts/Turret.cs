@@ -14,6 +14,7 @@ public class Turret : MonoBehaviour
 
     public GameObject projectileObject;
     public float projectileSpeed;
+    public Material material;
 
     public GameObject enemyInRange;
 
@@ -57,6 +58,7 @@ public class Turret : MonoBehaviour
         Vector3 dir = enemyInRange.transform.position - transform.position;
         GameObject projectile = Instantiate(projectileObject, transform.position, Quaternion.identity);
         projectile.GetComponent<Rigidbody2D>().velocity = dir * projectileSpeed;
+        SoundManager.S.MakeFireTurretSound(material);
         Destroy(projectile, 5f);
     }
 
