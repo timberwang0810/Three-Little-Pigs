@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: 46e0f58edc21b0648a76d7945d92a629
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6913979937974105803
+    second: foxBIKE_destroyed_0
+  - first:
+      213: -7224013857612722868
+    second: foxBIKE_destroyed_1
+  - first:
+      213: 6591602921599750527
+    second: foxBIKE_destroyed_2
+  - first:
+      213: 7160946693452093035
+    second: foxBIKE_destroyed_3
+  - first:
+      213: 2964429592361533037
+    second: foxBIKE_destroyed_4
+  - first:
+      213: -1551872711513272789
+    second: foxBIKE_destroyed_5
+  - first:
+      213: -5779183599015255089
+    second: foxBIKE_destroyed_6
+  - first:
+      213: -6068937011813401293
+    second: foxBIKE_destroyed_7
+  - first:
+      213: -7420259329108515447
+    second: foxBIKE_destroyed_8
+  - first:
+      213: -5888296542335902406
+    second: foxBIKE_destroyed_9
+  - first:
+      213: 897838494588129155
+    second: foxBIKE_destroyed_10
+  - first:
+      213: -4447088727805286110
+    second: foxBIKE_destroyed_11
+  - first:
+      213: 2270639802204249133
+    second: foxBIKE_destroyed_12
+  - first:
+      213: -8777040069875245678
+    second: foxBIKE_destroyed_13
+  - first:
+      213: 2512024759494720338
+    second: foxBIKE_destroyed_14
+  - first:
+      213: 5522857041739087379
+    second: foxBIKE_destroyed_15
+  - first:
+      213: 5830285650319956952
+    second: foxBIKE_destroyed_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 350
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: foxBIKE_destroyed_0
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 81
+        width: 359
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6bf1b2f1463ff50800000000000000
+      internalID: 6913979937974105803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foxBIKE_destroyed_1
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 115
+        width: 377
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d8e74cba52fbb90800000000000000
+      internalID: -7224013857612722868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foxBIKE_destroyed_3
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 111
+        width: 453
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6658bec31bc06360800000000000000
+      internalID: 7160946693452093035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foxBIKE_destroyed_6
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 108
+        width: 495
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3aee8d2273ccfa0800000000000000
+      internalID: -5779183599015255089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foxBIKE_destroyed_14
+      rect:
+        serializedVersion: 2
+        x: 2649
+        y: 102
+        width: 530
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b3ba0a5318cd220800000000000000
+      internalID: 2512024759494720338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foxBIKE_destroyed_15
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 97
+        width: 515
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e7f16d73125ac40800000000000000
+      internalID: 5522857041739087379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foxBIKE_destroyed_16
+      rect:
+        serializedVersion: 2
+        x: 4301
+        y: 97
+        width: 517
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dbd066a8e559e050800000000000000
+      internalID: 5830285650319956952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         animator.SetBool("walking", true);
+        animator.SetBool("bike", true);
 
         if (currDirection.x == -1)
         {
@@ -47,6 +48,17 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currHP -= damage;
+
+        if (transform.childCount == 2 && currHP <= (maxHP / 2))
+        {
+            animator.SetBool("bike", false);
+            speed /= 1.5f;
+            GameObject bike = transform.GetChild(1).gameObject;
+            bike.transform.parent = null;
+            bike.SetActive(true);
+            Destroy(bike, 1.0f);
+        }
+ 
         healthBar.AdjustFillAmount(currHP, maxHP);
         if (currHP <= 0)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnPoint : MonoBehaviour
 {
     public Direction turnDirection;
+    private HashSet<GameObject> enemies = new HashSet<GameObject>();
 
     [Range(0, 180.0f)]
     public float leftAngleInDegrees;
@@ -16,7 +17,11 @@ public class TurnPoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Enemy>().Turn(turnDirection, leftAngleInDegrees, rightAngleInDegrees);
+            if (!enemies.Contains(collision.gameObject))
+            {
+                collision.gameObject.GetComponent<Enemy>().Turn(turnDirection, leftAngleInDegrees, rightAngleInDegrees);
+                enemies.Add(collision.gameObject);
+            }
         }
     }
 }
