@@ -1039,14 +1039,18 @@ MonoBehaviour:
   StrawTurretFireSFX: {fileID: 8300000, guid: 466aeebd080b79b41a192063df392bbb, type: 3}
   WoodTurretFireSFX: {fileID: 8300000, guid: 0ef6c6a951d8dff49abd03c2c3760b61, type: 3}
   BrickTurretFireSFX: {fileID: 0}
-  WolfAttackSFX: {fileID: 0}
-  BearAttackSFX: {fileID: 0}
-  FoxAttackSFX: {fileID: 0}
+  WolfAttackSFXs:
+  - {fileID: 8300000, guid: ff1813ac59f1e8d4aae0ff0a740f1bb2, type: 3}
+  - {fileID: 8300000, guid: 5d69b1f4ccbfee44e8593fa72a959ce7, type: 3}
+  BearAttackSFXs:
+  - {fileID: 8300000, guid: 9fb8a44676a165a44997e5559c1fda03, type: 3}
+  - {fileID: 8300000, guid: 1273e487fe76a7246901897c2935d363, type: 3}
+  FoxAttackSFXs: []
   WolfHitSFX: {fileID: 0}
   BearHitSFX: {fileID: 0}
   FoxHitSFX: {fileID: 0}
-  WolfDeathSFX: {fileID: 0}
-  BearDeathSFX: {fileID: 0}
+  WolfDeathSFX: {fileID: 8300000, guid: e386271eef9f4c148bd3e8b517a60b93, type: 3}
+  BearDeathSFX: {fileID: 8300000, guid: 7aadc975b8c375642acad599d9ee7451, type: 3}
   FoxDeathSFX: {fileID: 0}
 --- !u!4 &750723361
 Transform:
