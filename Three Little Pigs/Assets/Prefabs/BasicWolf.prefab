@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 3
+  money: 50
   power: 1
   speed: 2
   attackCooldown: 1
