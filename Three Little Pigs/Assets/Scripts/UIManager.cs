@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject moneyFlashText;
     public GameObject pausePanel;
 
+    public TextMeshProUGUI moneyText;
+
     private void Awake()
     {
         // Singleton Definition
@@ -25,7 +27,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this); commented out to case for levels only allowing certain turrets
         pausePanel.SetActive(false);
     }
 
@@ -42,6 +44,11 @@ public class UIManager : MonoBehaviour
     public void HideAll()
     {
         HidePausePanel();
+    }
+    
+    public void UpdateMoney(int money)
+    {
+        moneyText.text = money.ToString();
     }
 
     public void ShowMoneyFlashText(int amount, Vector3 location)

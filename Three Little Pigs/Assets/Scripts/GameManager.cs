@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
 
     public int money;
-    public TextMeshProUGUI moneyText;
 
     private int numEnemies;
     private bool isSpawning;
@@ -87,7 +86,7 @@ public class GameManager : MonoBehaviour
         numEnemies--;
         Debug.Log("died " + numEnemies);
         money += amount;
-        moneyText.text = money.ToString();
+        UIManager.S.UpdateMoney(money);
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
     }
 
@@ -127,7 +126,7 @@ public class GameManager : MonoBehaviour
     public void SubtractMoney(int amount)
     {
         money -= amount;
-        moneyText.text = money.ToString();
+        UIManager.S.UpdateMoney(money);
     }
 
     private void FloodEnemies()
@@ -139,6 +138,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator LevelCompleteCoroutine()
     {
         yield return new WaitForSeconds(3.0f);
+        money = 100;
         LevelManager.S.GoToNextLevel();
     }
 }
