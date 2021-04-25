@@ -123,6 +123,7 @@ MonoBehaviour:
   power: 4
   speed: 1
   attackCooldown: 2
+  enemyType: 1
   initialDirection: {x: -1, y: 0}
 --- !u!70 &7372118587908402624
 CapsuleCollider2D:

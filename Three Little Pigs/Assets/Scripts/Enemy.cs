@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float power;
     public float speed;
     public float attackCooldown;
+    public EnemyType enemyType;
     public Vector2 initialDirection;
 
     private float currHP;
@@ -65,6 +66,7 @@ public class Enemy : MonoBehaviour
             speed = 0;
             healthBar.AdjustFillAmount(0, maxHP);
             animator.SetTrigger("die");
+            SoundManager.S.MakeDeathSound(enemyType);
             GameManager.S.OnEnemyDeath(money);
             UIManager.S.ShowMoneyFlashText(money, transform.position);
             Destroy(this.gameObject, 1.0f);
@@ -135,6 +137,7 @@ public class Enemy : MonoBehaviour
         while (hut != null)
         {
             animator.SetTrigger("attack");
+            SoundManager.S.MakeAttackSound(enemyType);
             hut.TakeDamage(power);
             yield return new WaitForSeconds(attackCooldown);
         }
