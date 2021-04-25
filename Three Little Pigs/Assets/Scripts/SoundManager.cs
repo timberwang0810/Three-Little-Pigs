@@ -15,9 +15,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip BrickTurretFireSFX;
 
     // enemy attack sfx
-    public AudioClip WolfAttackSFX;
-    public AudioClip BearAttackSFX;
-    public AudioClip FoxAttackSFX;
+    public AudioClip[] WolfAttackSFXs;
+    public AudioClip[] BearAttackSFXs;
+    public AudioClip[] FoxAttackSFXs;
 
     // enemy hit sfx
     public AudioClip WolfHitSFX;
@@ -64,7 +64,42 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BrickTurretFireSFX);
                 break;
             default:
-                audio.PlayOneShot(StrawTurretFireSFX);
+                break;
+        }
+    }
+
+    public void MakeAttackSound(EnemyType type)
+    {
+        switch (type)
+        {
+            case EnemyType.WOLF:
+                audio.PlayOneShot(WolfAttackSFXs[Random.Range(0, WolfAttackSFXs.Length)]);
+                break;
+            case EnemyType.BEAR:
+                audio.PlayOneShot(BearAttackSFXs[Random.Range(0, BearAttackSFXs.Length)]);
+                break;
+            case EnemyType.FOX:
+                audio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void MakeDeathSound(EnemyType type)
+    {
+        switch (type)
+        {
+            case EnemyType.WOLF:
+                audio.PlayOneShot(WolfDeathSFX);
+                break;
+            case EnemyType.BEAR:
+                audio.PlayOneShot(BearDeathSFX);
+                break;
+            case EnemyType.FOX:
+                audio.PlayOneShot(FoxDeathSFX);
+                break;
+            default:
                 break;
         }
     }
