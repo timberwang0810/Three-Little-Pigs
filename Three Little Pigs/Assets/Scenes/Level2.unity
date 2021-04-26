@@ -1225,9 +1225,9 @@ MonoBehaviour:
   StrawTurretFireSFX: {fileID: 8300000, guid: 466aeebd080b79b41a192063df392bbb, type: 3}
   WoodTurretFireSFX: {fileID: 8300000, guid: 0ef6c6a951d8dff49abd03c2c3760b61, type: 3}
   BrickTurretFireSFX: {fileID: 0}
-  WolfAttackSFX: {fileID: 0}
-  BearAttackSFX: {fileID: 0}
-  FoxAttackSFX: {fileID: 0}
+  WolfAttackSFXs: []
+  BearAttackSFXs: []
+  FoxAttackSFXs: []
   WolfHitSFX: {fileID: 0}
   BearHitSFX: {fileID: 0}
   FoxHitSFX: {fileID: 0}
@@ -2855,6 +2855,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyFlashText: {fileID: 3494894396540593000, guid: 29b70d8ac8db041279d0aa395de09e64, type: 3}
   pausePanel: {fileID: 83956053}
+  healthBar: {fileID: 2002151294}
+  minHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  maxHealthColor: {r: 0, g: 1, b: 0, a: 1}
   moneyText: {fileID: 1660489417}
 --- !u!4 &1149410206
 Transform:
@@ -3174,7 +3177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240566076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.44, z: 0}
+  m_LocalPosition: {x: 0, y: 2.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1487976830}
@@ -5833,7 +5836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8756921400014774412, guid: 881b0f058529441f09638953540e14db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.99
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: 8756921400014774412, guid: 881b0f058529441f09638953540e14db, type: 3}
       propertyPath: m_LocalPosition.z

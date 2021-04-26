@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     private void ResetLevel()
     {
         isSpawning = true;
+        UIManager.S.AdjustHealthBar(1);
         gameState = GameState.playing;
     }
 

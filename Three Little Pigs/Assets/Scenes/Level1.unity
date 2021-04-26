@@ -2939,6 +2939,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyFlashText: {fileID: 3494894396540593000, guid: 29b70d8ac8db041279d0aa395de09e64, type: 3}
   pausePanel: {fileID: 83956053}
+  healthBar: {fileID: 2002151294}
+  minHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  maxHealthColor: {r: 0, g: 1, b: 0, a: 1}
   moneyText: {fileID: 1660489417}
 --- !u!4 &1149410206
 Transform:
@@ -5351,7 +5354,7 @@ PrefabInstance:
       objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyPrefab

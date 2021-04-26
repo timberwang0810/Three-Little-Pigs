@@ -9,28 +9,20 @@ public class Hut : MonoBehaviour
     private float currHP;
     private bool isDestroyed = false;
 
-    [Header("Health Bar")]
-    public Image healthBar;
-    public Color minHealthColor;
-    public Color maxHealthColor;
-
     private void Start()
     {
         currHP = maxHP;
-        healthBar.fillAmount = 1;
-        healthBar.color = maxHealthColor;
     }
 
     public void TakeDamage(float damage)
     {
         if (isDestroyed) return;
         currHP -= damage;
-        healthBar.fillAmount = currHP / maxHP;
-        healthBar.color = Color.Lerp(minHealthColor, maxHealthColor, healthBar.fillAmount);
+        UIManager.S.AdjustHealthBar(currHP / maxHP);
         if (currHP <= damage)
         {
             isDestroyed = true;
-            healthBar.fillAmount = 0;
+            UIManager.S.AdjustHealthBar(0);
             Debug.Log("hut dead");
             GameManager.S.OnHutDestroyed();
             Destroy(this.gameObject, 1.0f);
