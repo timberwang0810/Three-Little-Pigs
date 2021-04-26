@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -8,6 +9,11 @@ public class UIManager : MonoBehaviour
     public static UIManager S;
     public GameObject moneyFlashText;
     public GameObject pausePanel;
+
+    [Header("Health Bar")]
+    public Image healthBar;
+    public Color minHealthColor;
+    public Color maxHealthColor;
 
     public TextMeshProUGUI moneyText;
 
@@ -29,6 +35,8 @@ public class UIManager : MonoBehaviour
     {
         //DontDestroyOnLoad(this); commented out to case for levels only allowing certain turrets
         pausePanel.SetActive(false);
+        healthBar.fillAmount = 1;
+        healthBar.color = maxHealthColor;
     }
 
     public void ShowPausePanel()
@@ -44,6 +52,12 @@ public class UIManager : MonoBehaviour
     public void HideAll()
     {
         HidePausePanel();
+    }
+
+    public void AdjustHealthBar(float amount)
+    {
+        healthBar.fillAmount = amount;
+        healthBar.color = Color.Lerp(minHealthColor, maxHealthColor, healthBar.fillAmount);
     }
     
     public void UpdateMoney(int money)
