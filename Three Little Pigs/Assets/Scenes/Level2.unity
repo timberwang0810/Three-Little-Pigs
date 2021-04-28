@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1681622011}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: btn_BuildTurret
         m_Mode: 5
@@ -6069,7 +6069,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1681622011}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: btn_BuildTurret
         m_Mode: 5
@@ -6675,7 +6675,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1681622011}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: btn_BuildTurret
         m_Mode: 5
@@ -8938,6 +8938,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671160604}
   m_CullTransparentMesh: 0
+--- !u!114 &1681622011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6026905943814323969, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
+  m_PrefabInstance: {fileID: 6026905944414600442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa038bea56001964888c4316c29959ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1707135113
 GameObject:
   m_ObjectHideFlags: 0
