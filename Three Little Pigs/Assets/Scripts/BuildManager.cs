@@ -16,12 +16,12 @@ public class BuildManager : MonoBehaviour
     [Serializable]
     public struct TurretInfo
     {
-        public string name;
+        public Material material;
         public int cost;
         public GameObject turretObject;
     }
     public TurretInfo[] turretArray;
-    public Dictionary<string, TurretInfo> turrets;
+    public Dictionary<Material, TurretInfo> turrets;
 
     private GameObject building = null;
     private TurretInfo currentTurret;
@@ -45,10 +45,10 @@ public class BuildManager : MonoBehaviour
     {
         worldHeight = Camera.main.orthographicSize * 2.0f;
         worldWidth = worldHeight * Screen.width / Screen.height;
-        turrets = new Dictionary<string, TurretInfo>();
+        turrets = new Dictionary<Material, TurretInfo>();
         foreach (TurretInfo t in turretArray)
         {
-            turrets.Add(t.name, t);
+            turrets.Add(t.material, t);
         }
     }
 
@@ -58,17 +58,17 @@ public class BuildManager : MonoBehaviour
         if (building != null)
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (currentTurret.name == "straw")
+            if (currentTurret.material == Material.STRAW)
             {
                 int x = (int) Mathf.Floor(pos.x);
                 int y = (int) Mathf.Ceil(pos.y);
                 building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y - worldHeight / (gridHeight * 2), 0);
-            } else if (currentTurret.name == "wood")
+            } else if (currentTurret.material == Material.WOOD)
             {
                 int x = (int)Mathf.Floor(pos.x);
                 int y = (int)Mathf.Floor(pos.y);
                 building.transform.position = new Vector3(x, y, 0);
-            } else if (currentTurret.name == "brick")
+            } else if (currentTurret.material == Material.BRICK)
             {
                 int x = (int)Mathf.Floor(pos.x);
                 int y = (int)Mathf.Ceil(pos.y);
@@ -85,7 +85,7 @@ public class BuildManager : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKey(KeyCode.Escape) || Input.GetMouseButtonDown(1))
             {
                 Destroy(building);
                 building = null;
@@ -93,9 +93,9 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    public void btn_BuildTurret(string name)
+    public void btn_BuildTurret(String material)
     {
-        TurretInfo turretType = turrets[name];
+        TurretInfo turretType = turrets[(Material)Enum.Parse(typeof(Material), material.ToUpper())];
         if (GameManager.S.money >= turretType.cost)
         {
             currentTurret = turretType;
