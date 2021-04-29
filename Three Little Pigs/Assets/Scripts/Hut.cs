@@ -17,6 +17,7 @@ public class Hut : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (isDestroyed) return;
+        Debug.Log("damaged: " + damage);
         currHP -= damage;
         UIManager.S.AdjustHealthBar(currHP / maxHP);
         if (currHP <= damage)

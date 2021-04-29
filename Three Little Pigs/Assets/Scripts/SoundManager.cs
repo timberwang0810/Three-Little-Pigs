@@ -62,7 +62,7 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(WoodTurretFireSFX);
                 break;
             case Material.BRICK:
-                audio.PlayOneShot(BrickTurretFireSFX);
+                //audio.PlayOneShot(BrickTurretFireSFX);
                 break;
             default:
                 break;
@@ -80,7 +80,7 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BearAttackSFXs[Random.Range(0, BearAttackSFXs.Length)]);
                 break;
             case EnemyType.FOX:
-                audio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
+                //audio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
                 break;
             default:
                 break;
@@ -98,7 +98,7 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BearDeathSFX);
                 break;
             case EnemyType.FOX:
-                audio.PlayOneShot(FoxDeathSFX);
+                //audio.PlayOneShot(FoxDeathSFX);
                 break;
             default:
                 break;
