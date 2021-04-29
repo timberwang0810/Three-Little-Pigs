@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public Vector2 initialDirection;
 
     private float currHP;
+    private bool isDead = false;
     private HealthBar healthBar;
     private Rigidbody2D rb;
     private Vector2 currDirection;
@@ -48,9 +49,10 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (isDead) return;
         currHP -= damage;
 
-        if (transform.childCount == 2 && currHP <= (maxHP / 2))
+        if (enemyType == EnemyType.FOX && transform.childCount == 2 && currHP <= (maxHP / 2))
         {
             animator.SetBool("bike", false);
             speed /= 1.5f;
@@ -63,6 +65,7 @@ public class Enemy : MonoBehaviour
         healthBar.AdjustFillAmount(currHP, maxHP);
         if (currHP <= 0)
         {
+            isDead = true;
             speed = 0;
             healthBar.AdjustFillAmount(0, maxHP);
             animator.SetTrigger("die");
