@@ -1044,7 +1044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: timeBetweenEnemySpawn
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyPrefab
@@ -9501,7 +9501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: timeBetweenEnemySpawn
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyPrefab
