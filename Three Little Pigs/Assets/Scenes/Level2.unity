@@ -9793,7 +9793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6026905943814323969, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
       propertyPath: turretArray.Array.data[1].cost
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6026905943814323974, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
       propertyPath: m_LocalPosition.x
