@@ -636,7 +636,124 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &226359875
+--- !u!1001 &524970036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: totalEnemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: xOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: yOffset
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: spawnDirection.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: initialSpawnDelay
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: timeBetweenEnemySpawn
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: totalEnemies.Array.data[0].enemyPrefab
+      value: 
+      objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: totalEnemies.Array.data[0].enemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: totalEnemies.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 4657735032031348906, guid: 7c9750dafe62b674e86892b06bbc0114, type: 3}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: totalEnemies.Array.data[1].enemyCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: totalEnemies.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 2574549914830626975, guid: 038db657907a7534288f99c7e5b6edbd, type: 3}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: totalEnemies.Array.data[2].enemyCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: startSpawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: spawnRateAcceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: maxSpawnRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506814, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: m_Name
+      value: EnemySpawner (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+--- !u!1 &533618049
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7677,6 +7794,18 @@ PrefabInstance:
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: startSpawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: spawnRateAcceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: maxSpawnRate
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: m_LocalPosition.x

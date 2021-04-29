@@ -14,7 +14,11 @@ public class Spawner : MonoBehaviour
     }
 
     public EnemyCountPair[] totalEnemies;
-    public float timeBetweenEnemySpawn;
+
+    [Header("Spawner Controls (Note: Spawn Rate is in terms of # seconds per enemy spawned")]
+    public float startSpawnRate;
+    public float spawnRateAcceleration;
+    public float maxSpawnRate;
     public float initialSpawnDelay;
     public Vector2 spawnDirection;
     public float xOffset;
@@ -24,13 +28,15 @@ public class Spawner : MonoBehaviour
     private Dictionary<string, int> currEnemies = new Dictionary<string, int>();
     private int numEnemiesToSpawn;
     private float cooldownTimer;
+    private float spawnRate;
     private bool isFlooding = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        cooldownTimer = timeBetweenEnemySpawn - initialSpawnDelay;
+        cooldownTimer = startSpawnRate - initialSpawnDelay;
+        spawnRate = startSpawnRate;
         maxEnemies.Clear();
         currEnemies.Clear();
         foreach (EnemyCountPair p in totalEnemies)
@@ -47,17 +53,18 @@ public class Spawner : MonoBehaviour
     {
         if (GameManager.S.gameState != GameManager.GameState.playing) return;
         cooldownTimer += Time.deltaTime;
-        if (cooldownTimer >= timeBetweenEnemySpawn && (numEnemiesToSpawn >= 0 || isFlooding))
+        if (cooldownTimer >= spawnRate && (numEnemiesToSpawn >= 0 || isFlooding))
         {
             SpawnOneEnemy();
             cooldownTimer = 0;
+            if (!isFlooding) spawnRate = Mathf.Clamp(spawnRate - spawnRateAcceleration, maxSpawnRate, startSpawnRate);
         }
     }
 
     public void Flood()
     {
         isFlooding = true;
-        timeBetweenEnemySpawn = 0.5f;
+        spawnRate = 0.5f;
     }
 
     // Spawn a random enemy type dictated by the level description in LevelManager
