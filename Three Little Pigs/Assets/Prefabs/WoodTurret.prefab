@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootInterval: 3
-  projectileObject: {fileID: 7583943466020941855, guid: f08d69a8747d7fc41bfc2b8e58f25c67, type: 3}
-  projectileSpeed: 7
+  projectileObject: {fileID: 5456534833969666907, guid: 68922f4291cb6f84b914e69f12d338a6, type: 3}
+  projectileSpeed: 5
   material: 1
   enemyInRange: {fileID: 0}
 --- !u!95 &9222502353644532618
@@ -137,7 +137,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.18}
-  m_Size: {x: 1.33, y: 0.5}
+  m_Size: {x: 1.21, y: 0.32}
   m_Direction: 1
 --- !u!50 &3540092940601124257
 Rigidbody2D:

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Brick : Projectile
+public class BrickProjectile : Projectile
 {
     public float splashDamage;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("call from child");
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);

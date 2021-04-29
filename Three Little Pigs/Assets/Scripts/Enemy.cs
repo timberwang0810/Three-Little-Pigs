@@ -126,9 +126,9 @@ public class Enemy : MonoBehaviour
             StartCoroutine(AttackHut(collision.gameObject.GetComponent<Hut>()));
         }
 
-        if (collision.gameObject.CompareTag("Projectile")) //splash damage
+        if (collision.gameObject.CompareTag("SplashDamage")) //splash damage
         {
-            TakeDamage(collision.gameObject.GetComponent<Brick>().splashDamage);
+            TakeDamage(collision.gameObject.GetComponent<BrickProjectile>().splashDamage);
         }
     }
 
