@@ -138,8 +138,9 @@ MonoBehaviour:
   maxHP: 4
   money: 30
   power: 1
-  speed: 4
+  speed: 2.5
   attackCooldown: 1
+  enemyType: 2
   initialDirection: {x: -1, y: 0}
 --- !u!50 &4286181303967935667
 Rigidbody2D:
