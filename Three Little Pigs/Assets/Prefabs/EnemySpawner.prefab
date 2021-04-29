@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalEnemies: []
-  timeBetweenEnemySpawn: 0
+  timeBetweenEnemySpawn: 5
   initialSpawnDelay: 0
   spawnDirection: {x: 0, y: 0}
+  xOffset: 0
+  yOffset: 0

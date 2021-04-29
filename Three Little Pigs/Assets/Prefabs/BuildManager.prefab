@@ -50,7 +50,7 @@ MonoBehaviour:
     cost: 50
     turretObject: {fileID: 2160106325326648143, guid: 252eaddb9c66fcc4db16926129dea219, type: 3}
   - material: 1
-    cost: 75
+    cost: 80
     turretObject: {fileID: 3013447881718396090, guid: 0703866b7a20a34408189c4fa7fb4120, type: 3}
   - material: 2
     cost: 100
