@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip WoodTurretFireSFX;
     public AudioClip BrickTurretFireSFX;
 
+
     // enemy attack sfx
     public AudioClip[] WolfAttackSFXs;
     public AudioClip[] BearAttackSFXs;
@@ -31,6 +32,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] FoxDeathSFXs;
 
     private AudioSource audio;
+
+
+    //UI SFX
+    public AudioClip BuildSFX;
 
     private void Awake()
     {
@@ -105,5 +110,10 @@ public class SoundManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void OnBuildTurretSound()
+    {
+        audio.PlayOneShot(BuildSFX);
     }
 }
