@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e185e0deffc614f9260ceb527bdb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurretBuildSFX: {fileID: 0}
+  TurretBuildSFX: {fileID: 8300000, guid: 530c336619550114d8e460d0573e4e3d, type: 3}
   StrawTurretFireSFX: {fileID: 8300000, guid: 466aeebd080b79b41a192063df392bbb, type: 3}
   WoodTurretFireSFX: {fileID: 8300000, guid: 0ef6c6a951d8dff49abd03c2c3760b61, type: 3}
   BrickTurretFireSFX: {fileID: 8300000, guid: cb7b56871a75a1b4393cac9fbd8f05d7, type: 3}
@@ -57,9 +57,12 @@ MonoBehaviour:
   FoxAttackSFXs:
   - {fileID: 8300000, guid: 30fc4a36c32cc6d468c948a364e13294, type: 3}
   - {fileID: 8300000, guid: 443f4ecd49259664fbb59c035c1ca4e5, type: 3}
-  FoxMotorAttackSFXs:
+  FoxMotorAttackWithVoiceSFXs:
   - {fileID: 8300000, guid: c11a38fca99694243b2ff285cb22fcff, type: 3}
   - {fileID: 8300000, guid: 032cd2a4ddfd3ed458bffba259d873c1, type: 3}
+  FoxMotorAttackWithoutVoiceSFXs:
+  - {fileID: 8300000, guid: 5129c365ba29b17428e0f5cfd3e8ba01, type: 3}
+  - {fileID: 8300000, guid: 93ddd19f7b5ae004dbbafe059a07d506, type: 3}
   WolfHitSFX: {fileID: 0}
   BearHitSFX: {fileID: 0}
   FoxHitSFX: {fileID: 0}
