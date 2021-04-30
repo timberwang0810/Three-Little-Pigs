@@ -57,9 +57,12 @@ MonoBehaviour:
   FoxAttackSFXs:
   - {fileID: 8300000, guid: 30fc4a36c32cc6d468c948a364e13294, type: 3}
   - {fileID: 8300000, guid: 443f4ecd49259664fbb59c035c1ca4e5, type: 3}
-  FoxMotorAttackSFXs:
+  FoxMotorAttackWithVoiceSFXs:
   - {fileID: 8300000, guid: c11a38fca99694243b2ff285cb22fcff, type: 3}
   - {fileID: 8300000, guid: 032cd2a4ddfd3ed458bffba259d873c1, type: 3}
+  FoxMotorAttackWithoutVoiceSFXs:
+  - {fileID: 8300000, guid: 5129c365ba29b17428e0f5cfd3e8ba01, type: 3}
+  - {fileID: 8300000, guid: 93ddd19f7b5ae004dbbafe059a07d506, type: 3}
   WolfHitSFX: {fileID: 0}
   BearHitSFX: {fileID: 0}
   FoxHitSFX: {fileID: 0}
@@ -73,6 +76,7 @@ MonoBehaviour:
   FoxDeathSFXs:
   - {fileID: 8300000, guid: 98cb6690f5445a14a9a304a4079653cb, type: 3}
   - {fileID: 8300000, guid: c919f02f56ae9864e89ccdcd4d8e92e0, type: 3}
+  BuildSFX: {fileID: 0}
 --- !u!82 &998571014767715405
 AudioSource:
   m_ObjectHideFlags: 0

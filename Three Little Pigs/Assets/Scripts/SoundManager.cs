@@ -19,7 +19,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] WolfAttackSFXs;
     public AudioClip[] BearAttackSFXs;
     public AudioClip[] FoxAttackSFXs;
-    public AudioClip[] FoxMotorAttackSFXs;
+    public AudioClip[] FoxMotorAttackWithVoiceSFXs;
+    public AudioClip[] FoxMotorAttackWithoutVoiceSFXs;
 
     // enemy hit sfx
     public AudioClip WolfHitSFX;
@@ -68,7 +69,7 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(WoodTurretFireSFX);
                 break;
             case Material.BRICK:
-                //audio.PlayOneShot(BrickTurretFireSFX);
+                audio.PlayOneShot(BrickTurretFireSFX);
                 break;
             default:
                 break;
@@ -86,8 +87,14 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BearAttackSFXs[Random.Range(0, BearAttackSFXs.Length)]);
                 break;
             case EnemyType.FOX:
-                if (isOnBike) audio.PlayOneShot(FoxMotorAttackSFXs[Random.Range(0, FoxMotorAttackSFXs.Length)]);
+                audio.volume = 0.3f;
+                if (isOnBike)
+                {
+                    if (Random.Range(0,1.0f) <= 0.2f) audio.PlayOneShot(FoxMotorAttackWithVoiceSFXs[Random.Range(0, FoxMotorAttackWithVoiceSFXs.Length)]);
+                    else audio.PlayOneShot(FoxMotorAttackWithoutVoiceSFXs[Random.Range(0, FoxMotorAttackWithoutVoiceSFXs.Length)]);
+                }
                 else audio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
+                audio.volume = 1;
                 break;
             default:
                 break;
@@ -105,7 +112,9 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BearDeathSFXs[Random.Range(0, BearDeathSFXs.Length)]);
                 break;
             case EnemyType.FOX:
+                audio.volume = 0.3f;
                 audio.PlayOneShot(FoxDeathSFXs[Random.Range(0, FoxDeathSFXs.Length)]);
+                audio.volume = 1.0f;
                 break;
             default:
                 break;
