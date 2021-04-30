@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7402630026492741092, guid: e37630b25bb0b6f4294583918f1a7bc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   power: 1
   speed: 2
   attackCooldown: 1
+  enemyType: 0
   initialDirection: {x: -1, y: 0}
 --- !u!50 &4821399593152536271
 Rigidbody2D:
@@ -140,7 +141,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.1, y: -0.1}
-  m_Size: {x: 0.94, y: 1.32}
+  m_Size: {x: 0.94, y: 0.93}
   m_Direction: 0
 --- !u!95 &2478451951128266708
 Animator:

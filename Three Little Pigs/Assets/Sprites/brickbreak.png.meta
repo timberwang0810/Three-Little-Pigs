@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: 991c96cae98b9ec4d99d93250bcf70d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1526866518092255961
+    second: brickbreak_0
+  - first:
+      213: -3577845674106602927
+    second: brickbreak_1
+  - first:
+      213: -8559921317276838576
+    second: brickbreak_2
+  - first:
+      213: -352020014493623376
+    second: brickbreak_3
+  - first:
+      213: 6914288674274158765
+    second: brickbreak_4
+  - first:
+      213: -577093325844724686
+    second: brickbreak_5
+  - first:
+      213: -8405612549651944966
+    second: brickbreak_6
+  - first:
+      213: 4629250487291903536
+    second: brickbreak_7
+  - first:
+      213: 3422104203302622316
+    second: brickbreak_8
+  - first:
+      213: -4054255955895935373
+    second: brickbreak_9
+  - first:
+      213: -6360691538310166433
+    second: brickbreak_10
+  - first:
+      213: 6678472495404360104
+    second: brickbreak_11
+  - first:
+      213: -7838483233230770598
+    second: brickbreak_12
+  - first:
+      213: 6451751054931309579
+    second: brickbreak_13
+  - first:
+      213: 8411240825805510594
+    second: brickbreak_14
+  - first:
+      213: -1157076945352254599
+    second: brickbreak_15
+  - first:
+      213: -3391928955613037924
+    second: brickbreak_16
+  - first:
+      213: 2734674066525112788
+    second: brickbreak_17
+  - first:
+      213: 4959804512142631353
+    second: brickbreak_18
+  - first:
+      213: 1930780220842679900
+    second: brickbreak_19
+  - first:
+      213: 7871025536488362483
+    second: brickbreak_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 130
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: brickbreak_3
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 73
+        width: 206
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb974279af5d1bf0800000000000000
+      internalID: -352020014493623376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickbreak_14
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 54
+        width: 230
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7966667fabab470800000000000000
+      internalID: 8411240825805510594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickbreak_17
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 23
+        width: 347
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9c3b7139383f520800000000000000
+      internalID: 2734674066525112788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickbreak_18
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 45
+        width: 329
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b124a5fce3c4d440800000000000000
+      internalID: 4959804512142631353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
