@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
         while (hut != null)
         {
             animator.SetTrigger("attack");
-            SoundManager.S.MakeAttackSound(enemyType);
+            SoundManager.S.MakeAttackSound(enemyType, animator.GetBool("bike"));
             hut.TakeDamage(power);
             yield return new WaitForSeconds(attackCooldown);
         }

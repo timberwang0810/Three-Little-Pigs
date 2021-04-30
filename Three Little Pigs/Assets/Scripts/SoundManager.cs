@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] WolfAttackSFXs;
     public AudioClip[] BearAttackSFXs;
     public AudioClip[] FoxAttackSFXs;
+    public AudioClip[] FoxMotorAttackSFXs;
 
     // enemy hit sfx
     public AudioClip WolfHitSFX;
@@ -26,9 +27,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip FoxHitSFX;
 
     // enemy death sfx
-    public AudioClip WolfDeathSFX;
-    public AudioClip BearDeathSFX;
-    public AudioClip FoxDeathSFX;
+    public AudioClip[] WolfDeathSFXs;
+    public AudioClip[] BearDeathSFXs;
+    public AudioClip[] FoxDeathSFXs;
 
     private AudioSource audio;
 
@@ -74,7 +75,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void MakeAttackSound(EnemyType type)
+    public void MakeAttackSound(EnemyType type, bool isOnBike)
     {
         switch (type)
         {
@@ -85,7 +86,8 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BearAttackSFXs[Random.Range(0, BearAttackSFXs.Length)]);
                 break;
             case EnemyType.FOX:
-                //audio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
+                if (isOnBike) audio.PlayOneShot(FoxMotorAttackSFXs[Random.Range(0, FoxMotorAttackSFXs.Length)]);
+                else audio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
                 break;
             default:
                 break;
@@ -97,13 +99,13 @@ public class SoundManager : MonoBehaviour
         switch (type)
         {
             case EnemyType.WOLF:
-                audio.PlayOneShot(WolfDeathSFX);
+                audio.PlayOneShot(WolfDeathSFXs[Random.Range(0, WolfDeathSFXs.Length)]);
                 break;
             case EnemyType.BEAR:
-                audio.PlayOneShot(BearDeathSFX);
+                audio.PlayOneShot(BearDeathSFXs[Random.Range(0, BearDeathSFXs.Length)]);
                 break;
             case EnemyType.FOX:
-                //audio.PlayOneShot(FoxDeathSFX);
+                audio.PlayOneShot(FoxDeathSFXs[Random.Range(0, FoxDeathSFXs.Length)]);
                 break;
             default:
                 break;
