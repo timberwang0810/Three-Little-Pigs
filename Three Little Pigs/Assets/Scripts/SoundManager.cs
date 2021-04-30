@@ -32,7 +32,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] BearDeathSFXs;
     public AudioClip[] FoxDeathSFXs;
 
-    private AudioSource audio;
+    public AudioSource audio;
+    public AudioSource quieterAudio;
 
     private void Awake()
     {
@@ -51,7 +52,8 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
-        audio = GetComponent<AudioSource>();
+        audio.volume = 1.0f;
+        quieterAudio.volume = 0.3f;
     }
 
     public void MakeFireTurretSound(Material mat)
@@ -83,14 +85,12 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BearAttackSFXs[Random.Range(0, BearAttackSFXs.Length)]);
                 break;
             case EnemyType.FOX:
-                audio.volume = 0.3f;
                 if (isOnBike)
                 {
-                    if (Random.Range(0,1.0f) <= 0.2f) audio.PlayOneShot(FoxMotorAttackWithVoiceSFXs[Random.Range(0, FoxMotorAttackWithVoiceSFXs.Length)]);
-                    else audio.PlayOneShot(FoxMotorAttackWithoutVoiceSFXs[Random.Range(0, FoxMotorAttackWithoutVoiceSFXs.Length)]);
+                    if (Random.Range(0,1.0f) <= 0.2f) quieterAudio.PlayOneShot(FoxMotorAttackWithVoiceSFXs[Random.Range(0, FoxMotorAttackWithVoiceSFXs.Length)]);
+                    else quieterAudio.PlayOneShot(FoxMotorAttackWithoutVoiceSFXs[Random.Range(0, FoxMotorAttackWithoutVoiceSFXs.Length)]);
                 }
-                else audio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
-                audio.volume = 1;
+                else quieterAudio.PlayOneShot(FoxAttackSFXs[Random.Range(0, FoxAttackSFXs.Length)]);
                 break;
             default:
                 break;
@@ -108,9 +108,7 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(BearDeathSFXs[Random.Range(0, BearDeathSFXs.Length)]);
                 break;
             case EnemyType.FOX:
-                audio.volume = 0.3f;
-                audio.PlayOneShot(FoxDeathSFXs[Random.Range(0, FoxDeathSFXs.Length)]);
-                audio.volume = 1.0f;
+                quieterAudio.PlayOneShot(FoxDeathSFXs[Random.Range(0, FoxDeathSFXs.Length)]);
                 break;
             default:
                 break;
