@@ -81,6 +81,7 @@ public class Turret : MonoBehaviour
     {
         if (renderer.color == Color.green)
         {
+            SoundManager.S.OnBuildTurretSound();
             GetComponent<CapsuleCollider2D>().isTrigger = false;
             building = false;
             renderer.color = Color.white;
