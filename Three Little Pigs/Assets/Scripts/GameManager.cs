@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private int numEnemies;
     private bool isSpawning;
 
+    private int finishedSpawners = 0;
+
     private void Awake()
     {
         // Singleton Definition
@@ -72,8 +74,9 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemiesFinishedSpawning()
     {
-        //Debug.Log("done spawning");
-        isSpawning = false;
+        Debug.Log("done spawning");
+        finishedSpawners++;
+        if (finishedSpawners == LevelManager.S.spawners.Length) isSpawning = false;
     }
 
     public void OnEnemySpawned()
@@ -133,7 +136,11 @@ public class GameManager : MonoBehaviour
     private void FloodEnemies()
     {
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
-        LevelManager.S.currLevelSpawner.Flood();
+        for (int i = 0; i < LevelManager.S.spawners.Length; i++)
+        {
+            Debug.Log("flod");
+            LevelManager.S.spawners[i].GetComponent<Spawner>().Flood();
+        }
     }
 
     private IEnumerator LevelCompleteCoroutine()

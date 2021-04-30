@@ -9,7 +9,8 @@ public class LevelManager : MonoBehaviour
     public int currLevel;
     public string currLevelName;
     public bool isFinalLevel = false;
-    public Spawner currLevelSpawner;
+
+    public GameObject[] spawners;
 
     private void Awake()
     {
