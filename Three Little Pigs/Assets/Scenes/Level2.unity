@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6026905944414600443}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: btn_BuildTurret
         m_Mode: 5
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: price
+  m_text: $100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -341,8 +341,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1247,12 +1247,12 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 445936072}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6026905944414600443}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: btn_BuildTurret
         m_Mode: 5
@@ -1713,7 +1713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: initialSpawnDelay
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: timeBetweenEnemySpawn
@@ -1742,6 +1742,18 @@ PrefabInstance:
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: startSpawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: spawnRateAcceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: maxSpawnRate
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1872,7 +1884,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: price
+  m_text: $75
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1899,8 +1911,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4205,7 +4217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4617,7 +4629,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6026905944414600443}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: btn_BuildTurret
         m_Mode: 5
@@ -4966,7 +4978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: price
+  m_text: $50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4993,8 +5005,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7864,6 +7876,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6026905943814323969, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
       propertyPath: turretArray.Array.data[1].cost
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026905943814323969, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
+      propertyPath: turretArray.Array.data[2].cost
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6026905943814323974, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
@@ -7912,3 +7928,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
+--- !u!114 &6026905944414600443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6026905943814323969, guid: f94f29895beb73742b4e90bc54691a91, type: 3}
+  m_PrefabInstance: {fileID: 6026905944414600442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa038bea56001964888c4316c29959ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

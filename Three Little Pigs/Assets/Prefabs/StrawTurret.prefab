@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootInterval: 3
   projectileObject: {fileID: 7583943466020941855, guid: f08d69a8747d7fc41bfc2b8e58f25c67, type: 3}
-  projectileSpeed: 6
+  projectileSpeed: 5
   material: 0
   enemyInRange: {fileID: 0}
 --- !u!50 &4299066702312634399

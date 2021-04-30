@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator LevelCompleteCoroutine()
     {
         yield return new WaitForSeconds(3.0f);
-        money = 100;
+        money = 200;
         LevelManager.S.GoToNextLevel();
     }
 }

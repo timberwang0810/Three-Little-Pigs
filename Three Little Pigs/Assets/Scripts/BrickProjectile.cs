@@ -12,9 +12,11 @@ public class BrickProjectile : Projectile
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
 
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+
             GetComponent<CircleCollider2D>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Animator>().SetTrigger("explode");
 
             Destroy(this.gameObject, 0.5f);
         }
