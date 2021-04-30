@@ -34,10 +34,6 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource audio;
 
-
-    //UI SFX
-    public AudioClip BuildSFX;
-
     private void Awake()
     {
         // Singleton Definition
@@ -123,6 +119,6 @@ public class SoundManager : MonoBehaviour
 
     public void OnBuildTurretSound()
     {
-        audio.PlayOneShot(BuildSFX);
+        audio.PlayOneShot(TurretBuildSFX);
     }
 }
