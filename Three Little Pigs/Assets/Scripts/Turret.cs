@@ -23,7 +23,7 @@ public class Turret : MonoBehaviour
     private float xSize;
     private float ySize;
     private Color startColor;
-    private bool isMouseOver = false;;
+    private bool isMouseOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -138,6 +138,7 @@ public class Turret : MonoBehaviour
 
     public void OnMouseDown()
     {
-        
+        if (building || loading || !isMouseOver) return;
+        UIManager.S.ShowSellPanel(this);
     }
 }

@@ -10,6 +10,11 @@ public class UIManager : MonoBehaviour
     public GameObject moneyFlashText;
     public GameObject pausePanel;
 
+    [Header("Sell Panel")]
+    public GameObject sellPanel;
+    public TextMeshProUGUI sellText;
+    private Turret selectedTurret;
+
     [Header("Health Bar")]
     public Image healthBar;
     public Color minHealthColor;
@@ -42,6 +47,7 @@ public class UIManager : MonoBehaviour
     public void ShowPausePanel()
     {
         pausePanel.SetActive(true);
+        sellPanel.SetActive(false);
     }
 
     public void HidePausePanel()
@@ -52,6 +58,7 @@ public class UIManager : MonoBehaviour
     public void HideAll()
     {
         HidePausePanel();
+        HideSellPanel();
     }
 
     public void AdjustHealthBar(float amount)
@@ -71,6 +78,31 @@ public class UIManager : MonoBehaviour
         GameObject moneyFlashTextObject = Instantiate(moneyFlashText, offsetLocation, Quaternion.identity);
         moneyFlashTextObject.GetComponent<TextMeshPro>().text = "+ " + amount;
         StartCoroutine(FlashMoneyText(moneyFlashTextObject));
+    }
+
+    public void ShowSellPanel(Turret currTurret)
+    {
+        sellPanel.SetActive(true);
+        sellText.text = "Sell " + currTurret.gameObject.name + " for " + currTurret.cost + "?";
+        selectedTurret = currTurret;
+    }
+
+    public void HideSellPanel()
+    {
+        sellPanel.SetActive(false);
+    }
+
+    public void btn_YesSell()
+    {
+        GameManager.S.AddMoney(selectedTurret.cost);
+        HideSellPanel();
+        ShowMoneyFlashText(selectedTurret.cost, selectedTurret.gameObject.transform.position);
+        Destroy(selectedTurret.gameObject);
+    }
+
+    public void btn_NoSell()
+    {
+        HideSellPanel();
     }
 
     private IEnumerator FlashMoneyText(GameObject moneyFlashTextObject)

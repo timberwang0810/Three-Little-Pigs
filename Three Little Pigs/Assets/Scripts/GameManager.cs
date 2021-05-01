@@ -130,6 +130,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LevelLostCoroutine());
     }
 
+    public void AddMoney(int amount)
+    {
+        money += amount;
+        UIManager.S.UpdateMoney(money);
+    }
+
     public void SubtractMoney(int amount)
     {
         money -= amount;
