@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
     public void ShowSellPanel(Turret currTurret)
     {
         sellPanel.SetActive(true);
-        sellText.text = "Sell this turret for " + currTurret.cost + "?";
+        sellText.text = "Sell this turret for $" + currTurret.cost + "?";
         selectedTurret = currTurret;
     }
 
