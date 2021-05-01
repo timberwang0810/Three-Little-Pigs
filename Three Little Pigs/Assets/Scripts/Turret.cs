@@ -45,8 +45,7 @@ public class Turret : MonoBehaviour
                     enemyInRange = null;
                     return;
                 }
-
-                Shoot();
+                animator.SetTrigger("shoot");
                 shootTimer = 0f;
             }
         }
@@ -54,10 +53,10 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-        animator.SetTrigger("shoot");
+        if (enemyInRange == null) return;
         Vector3 dir = enemyInRange.transform.position - transform.position;
         GameObject projectile = Instantiate(projectileObject, transform.position, Quaternion.identity);
-        projectile.GetComponent<Rigidbody2D>().velocity = dir * projectileSpeed;
+        projectile.GetComponent<Rigidbody2D>().velocity = dir.normalized * projectileSpeed;
         SoundManager.S.MakeFireTurretSound(material);
         Destroy(projectile, 5f);
     }
