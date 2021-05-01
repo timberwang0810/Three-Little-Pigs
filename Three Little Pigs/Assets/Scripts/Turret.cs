@@ -9,14 +9,21 @@ public class Turret : MonoBehaviour
     private SpriteRenderer renderer;
     private Animator animator;
 
+    public Material material;
+    public int cost;
     public float shootInterval;
     private float shootTimer = 0f;
 
     public GameObject projectileObject;
     public float projectileSpeed;
-    public Material material;
 
     public GameObject enemyInRange;
+
+    private SpriteRenderer r;
+    private float xSize;
+    private float ySize;
+    private Color startColor;
+    private bool isMouseOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +33,10 @@ public class Turret : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.enabled = false;
         shootTimer = shootInterval;
+        r = GetComponent<SpriteRenderer>();
+        xSize = r.bounds.size.x;
+        ySize = r.bounds.size.y;
+        Debug.Log("x: " + xSize + ", y: " + ySize);
     }
 
     // Update is called once per frame
@@ -95,5 +106,39 @@ public class Turret : MonoBehaviour
     {
         animator.SetBool("load", false);
         loading = false;
+        startColor = r.color;
+    }
+
+    public void OnMouseOver()
+    {
+        if (building || loading) return;
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Debug.Log("mousepos: " + mousePos + ", obj pos: " + transform.position);
+        if (mousePos.x <= transform.position.x + (xSize / 2) && mousePos.x >= transform.position.x - (xSize / 2)
+            && mousePos.y <= transform.position.y + (ySize / 2) && mousePos.y >= transform.position.y - (ySize / 2))
+        {
+            isMouseOver = true;
+            r.color = Color.red;
+        }
+        else
+        {
+            isMouseOver = false;
+            r.color = startColor;
+        }
+    }
+
+    public void OnMouseExit()
+    {
+        if (building || loading) return;
+        isMouseOver = false;
+        r.color = startColor;
+    }
+
+    public void OnMouseDown()
+    {
+        if (building || loading || !isMouseOver) return;
+        UIManager.S.ShowSellPanel(this);
     }
 }

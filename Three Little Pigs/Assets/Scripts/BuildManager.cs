@@ -13,18 +13,12 @@ public class BuildManager : MonoBehaviour
     private float worldHeight;
     private float worldWidth;
 
-    [Serializable]
-    public struct TurretInfo
-    {
-        public Material material;
-        public int cost;
-        public GameObject turretObject;
-    }
-    public TurretInfo[] turretArray;
-    public Dictionary<Material, TurretInfo> turrets;
+    public GameObject strawTurretPrefab;
+    public GameObject woodTurretPrefab;
+    public GameObject brickTurretPrefab;
 
     private GameObject building = null;
-    private TurretInfo currentTurret;
+    private GameObject currentTurret;
 
     private void Awake()
     {
@@ -45,11 +39,6 @@ public class BuildManager : MonoBehaviour
     {
         worldHeight = Camera.main.orthographicSize * 2.0f;
         worldWidth = worldHeight * Screen.width / Screen.height;
-        turrets = new Dictionary<Material, TurretInfo>();
-        foreach (TurretInfo t in turretArray)
-        {
-            turrets.Add(t.material, t);
-        }
     }
 
     // Update is called once per frame
@@ -58,17 +47,17 @@ public class BuildManager : MonoBehaviour
         if (building != null)
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (currentTurret.material == Material.STRAW)
+            if (currentTurret.GetComponent<Turret>().material == Material.STRAW)
             {
                 int x = (int) Mathf.Floor(pos.x);
                 int y = (int) Mathf.Ceil(pos.y);
                 building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y - worldHeight / (gridHeight * 2), 0);
-            } else if (currentTurret.material == Material.WOOD)
+            } else if (currentTurret.GetComponent<Turret>().material == Material.WOOD)
             {
                 int x = (int)Mathf.Floor(pos.x);
                 int y = (int)Mathf.Floor(pos.y);
                 building.transform.position = new Vector3(x, y, 0);
-            } else if (currentTurret.material == Material.BRICK)
+            } else if (currentTurret.GetComponent<Turret>().material == Material.BRICK)
             {
                 int x = (int)Mathf.Floor(pos.x);
                 int y = (int)Mathf.Ceil(pos.y);
@@ -80,7 +69,7 @@ public class BuildManager : MonoBehaviour
             {
                 if (building.GetComponent<Turret>().BuildTurret())
                 {
-                    GameManager.S.SubtractMoney(currentTurret.cost);
+                    GameManager.S.SubtractMoney(currentTurret.GetComponent<Turret>().cost);
                     building = null;
                 }
             }
@@ -95,12 +84,27 @@ public class BuildManager : MonoBehaviour
 
     public void btn_BuildTurret(String material)
     {
-        TurretInfo turretType = turrets[(Material)Enum.Parse(typeof(Material), material.ToUpper())];
-        if (GameManager.S.money >= turretType.cost)
+        GameObject turretType = MatchTurret((Material)Enum.Parse(typeof(Material), material.ToUpper()));
+        if (GameManager.S.money >= turretType.GetComponent<Turret>().cost)
         {
             currentTurret = turretType;
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            building = Instantiate(turretType.turretObject, new Vector3(pos.x, pos.y, 0), Quaternion.identity);
+            building = Instantiate(turretType, new Vector3(pos.x, pos.y, 0), Quaternion.identity);
+        }
+    }
+
+    private GameObject MatchTurret(Material mat)
+    {
+        switch (mat)
+        {
+            case Material.STRAW:
+                return strawTurretPrefab;
+            case Material.WOOD:
+                return woodTurretPrefab;
+            case Material.BRICK:
+                return brickTurretPrefab;
+            default:
+                return null;
         }
     }
 }

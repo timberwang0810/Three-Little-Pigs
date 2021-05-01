@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df86675cc70609e44af0970f43becf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: 1
+  cost: 75
   shootInterval: 2
   projectileObject: {fileID: 5456534833969666907, guid: 68922f4291cb6f84b914e69f12d338a6, type: 3}
   projectileSpeed: 15
-  material: 1
   enemyInRange: {fileID: 0}
 --- !u!95 &9222502353644532618
 Animator:

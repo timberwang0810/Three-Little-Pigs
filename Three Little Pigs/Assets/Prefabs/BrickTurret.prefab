@@ -118,10 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df86675cc70609e44af0970f43becf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: 2
+  cost: 100
   shootInterval: 5
   projectileObject: {fileID: 4956111570309925919, guid: 6afae4d4dd446044c829e7d745119b48, type: 3}
   projectileSpeed: 12
-  material: 2
   enemyInRange: {fileID: 0}
 --- !u!50 &5565360235998971794
 Rigidbody2D:
