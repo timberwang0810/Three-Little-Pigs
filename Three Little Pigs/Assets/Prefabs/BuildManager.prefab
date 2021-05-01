@@ -45,13 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridWidth: 18
   gridHeight: 10
-  turretArray:
-  - material: 0
-    cost: 50
-    turretObject: {fileID: 2160106325326648143, guid: 252eaddb9c66fcc4db16926129dea219, type: 3}
-  - material: 1
-    cost: 75
-    turretObject: {fileID: 3013447881718396090, guid: 0703866b7a20a34408189c4fa7fb4120, type: 3}
-  - material: 2
-    cost: 100
-    turretObject: {fileID: 2117292308199403993, guid: 42d875cc4b008674e9dc2c5ed53a5c52, type: 3}
+  strawTurretPrefab: {fileID: 2160106325326648143, guid: 252eaddb9c66fcc4db16926129dea219, type: 3}
+  woodTurretPrefab: {fileID: 3013447881718396090, guid: 0703866b7a20a34408189c4fa7fb4120, type: 3}
+  brickTurretPrefab: {fileID: 2117292308199403993, guid: 42d875cc4b008674e9dc2c5ed53a5c52, type: 3}

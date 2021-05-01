@@ -9,12 +9,13 @@ public class Turret : MonoBehaviour
     private SpriteRenderer renderer;
     private Animator animator;
 
+    public Material material;
+    public int cost;
     public float shootInterval;
     private float shootTimer = 0f;
 
     public GameObject projectileObject;
     public float projectileSpeed;
-    public Material material;
 
     public GameObject enemyInRange;
 
