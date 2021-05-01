@@ -11,6 +11,7 @@ TagManager:
   - Projectile
   - UnplaceableArea
   - SplashDamage
+  - Pig
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - TurnPoint
   - Projectile
   - Turret
-  - 
+  - Pig
   - 
   - 
   - 

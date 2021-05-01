@@ -62,15 +62,19 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.getReady;
         UIManager.S.HideAll();
-        ResetLevel();
+        UIManager.S.AdjustHealthBar(1);
+        foreach (GameObject spawner in LevelManager.S.spawners)
+        {
+            Debug.Log("reached");
+            StartCoroutine(spawner.GetComponent<Spawner>().SpawnPigs());
+        }
     }
 
-    private void ResetLevel()
+    public void ResetLevel()
     {
         isSpawning = true;
         finishedSpawners = 0;
         numEnemies = 0;
-        UIManager.S.AdjustHealthBar(1);
         gameState = GameState.playing;
     }
 
@@ -100,7 +104,6 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.oops;
         Debug.Log("hut gone");
-        // TODO: if it's the brick hut, call OnLevelLost()
         if (LevelManager.S.isFinalLevel || isSpawning || numEnemies > 0) OnLevelLost();
         else OnLevelCleared();
     }
@@ -108,7 +111,6 @@ public class GameManager : MonoBehaviour
     private void OnEnemiesCleared()
     {
         Debug.Log("level complete!");
-        // TODO: if it's the brick hut, call OnLevelWon()
         if (LevelManager.S.isFinalLevel) OnLevelWon();
         else FloodEnemies();
     }
