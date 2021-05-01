@@ -68,21 +68,23 @@ public class GameManager : MonoBehaviour
     private void ResetLevel()
     {
         isSpawning = true;
+        finishedSpawners = 0;
+        numEnemies = 0;
         UIManager.S.AdjustHealthBar(1);
         gameState = GameState.playing;
     }
 
     public void OnEnemiesFinishedSpawning()
     {
-        Debug.Log("done spawning");
         finishedSpawners++;
+        Debug.Log("done spawning " + finishedSpawners);
         if (finishedSpawners == LevelManager.S.spawners.Length) isSpawning = false;
     }
 
     public void OnEnemySpawned()
     {
         numEnemies++;
-        //Debug.Log("spawned " + numEnemies);
+        Debug.Log("spawned " + numEnemies);
     }
 
     public void OnEnemyDeath(int amount)
@@ -97,9 +99,9 @@ public class GameManager : MonoBehaviour
     public void OnHutDestroyed()
     {
         gameState = GameState.oops;
-        //Debug.Log("hut gone");
+        Debug.Log("hut gone");
         // TODO: if it's the brick hut, call OnLevelLost()
-        if (LevelManager.S.isFinalLevel) OnLevelLost();
+        if (LevelManager.S.isFinalLevel || isSpawning || numEnemies > 0) OnLevelLost();
         else OnLevelCleared();
     }
 
@@ -125,6 +127,7 @@ public class GameManager : MonoBehaviour
     private void OnLevelLost()
     {
         // TODO: On final level when the brick hut is destroyed
+        StartCoroutine(LevelLostCoroutine());
     }
 
     public void SubtractMoney(int amount)
@@ -143,10 +146,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator LevelLostCoroutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+        LevelManager.S.RestartLevel();
+        money = 100; //figure out how much money to give
+        ResetLevel();
+    }
+
     private IEnumerator LevelCompleteCoroutine()
     {
         yield return new WaitForSeconds(3.0f);
         money = 200;
         LevelManager.S.GoToNextLevel();
+        ResetLevel();
     }
 }

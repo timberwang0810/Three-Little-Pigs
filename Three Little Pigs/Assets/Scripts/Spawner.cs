@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour
     private float cooldownTimer;
     private float spawnRate;
     private bool isFlooding = false;
+    private bool isDoneSpawning = false;
 
 
     // Start is called before the first frame update
@@ -72,7 +73,12 @@ public class Spawner : MonoBehaviour
     {
         if (numEnemiesToSpawn <= 0 && !isFlooding)
         {
-            GameManager.S.OnEnemiesFinishedSpawning();
+            if (!isDoneSpawning)
+            {
+                isDoneSpawning = true;
+                GameManager.S.OnEnemiesFinishedSpawning();
+                return;
+            }
             return;
         }
         // Choose a random enemy type
