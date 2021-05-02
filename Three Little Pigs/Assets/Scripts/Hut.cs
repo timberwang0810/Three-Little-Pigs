@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class Hut : MonoBehaviour
 {
     public float maxHP;
+    public Vector3 hutSpawnOffset;
+    public Vector2 hutSpawnDirection;
+    public float timeBetweenSpawn;
+    public GameObject[] pigs;
     private float currHP;
+    private int currPigs = 0;
     private bool isDestroyed = false;
 
     private void Start()
@@ -23,8 +28,28 @@ public class Hut : MonoBehaviour
         {
             isDestroyed = true;
             UIManager.S.AdjustHealthBar(0);
-            GameManager.S.OnHutDestroyed();
-            Destroy(this.gameObject, 1.0f);
+            GetComponent<SpriteRenderer>().enabled = false;
+            StartCoroutine(ReleasePigs());
         }
     }
+
+    public void OnPigEntered()
+    {
+        currPigs++;
+        if (currPigs == pigs.Length) GameManager.S.ResetLevel();
+    }
+
+    private IEnumerator ReleasePigs()
+    {
+        foreach (GameObject pigObject in pigs)
+        {
+            GameObject pig = Instantiate(pigObject, transform.position + hutSpawnOffset, Quaternion.identity);
+            pig.GetComponent<Pig>().initialDirection = hutSpawnDirection;
+            yield return new WaitForSeconds(timeBetweenSpawn);
+        }
+        GameManager.S.OnHutDestroyed();
+        Destroy(this.gameObject, 1.0f);
+    }
+
+
 }

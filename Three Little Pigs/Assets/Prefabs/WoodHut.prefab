@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8756921400014774419
+--- !u!1 &7510977415424144322
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8756921400014774412}
-  - component: {fileID: 8756921400014774415}
-  - component: {fileID: 8756921400014774417}
-  - component: {fileID: 8756921400014774414}
-  - component: {fileID: 8098687662159343688}
+  - component: {fileID: 7510977415424144349}
+  - component: {fileID: 7510977415424144350}
+  - component: {fileID: 7510977415424144320}
+  - component: {fileID: 7510977415424144351}
+  - component: {fileID: 7052318376167432985}
   m_Layer: 10
-  m_Name: StrawHut
+  m_Name: WoodHut
   m_TagString: Hut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8756921400014774412
+--- !u!4 &7510977415424144349
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8756921400014774419}
+  m_GameObject: {fileID: 7510977415424144322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.71, y: -1.56, z: 0}
+  m_LocalPosition: {x: -6.11, y: -2.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8756921400014774415
+--- !u!212 &7510977415424144350
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8756921400014774419}
+  m_GameObject: {fileID: 7510977415424144322}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bb9e70deb6ed5e944a33683ef220ba01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d035a958e7528d04dbe0077acb0c0451, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,13 +85,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8756921400014774417
+--- !u!61 &7510977415424144320
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8756921400014774419}
+  m_GameObject: {fileID: 7510977415424144322}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3.5008547}
+    oldSize: {x: 3, y: 3.5}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -111,65 +111,48 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8756921400014774414
+--- !u!114 &7510977415424144351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8756921400014774419}
+  m_GameObject: {fileID: 7510977415424144322}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 795cd015997074ceba5378d1f200e15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
-  hutSpawnOffset: {x: -1, y: 3, z: 0}
-  hutSpawnDirection: {x: 0, y: 1}
+  hutSpawnOffset: {x: 2, y: 0, z: 0}
+  hutSpawnDirection: {x: 0, y: -1}
   timeBetweenSpawn: 2
   pigs:
   - {fileID: 3453832308992048005, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
-  - {fileID: 3453832308992048005, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
---- !u!61 &8098687662159343688
+  - {fileID: 3453832308992048005, guid: 2847dfd2a22364fbc82392347a715a4a, type: 3}
+--- !u!61 &7052318376167432985
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8756921400014774419}
+  m_GameObject: {fileID: 7510977415424144322}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.52, y: -0.42}
+  m_Offset: {x: 0, y: 1.33}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3.5008547}
+    oldSize: {x: 3, y: 3.5}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1.78}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5808750351204080576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 795cd015997074ceba5378d1f200e15e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 5
-  hutSpawnOffset: {x: 0, y: 0, z: 0}
-  hutSpawnDirection: {x: 0, y: 0}
-  timeBetweenSpawn: 0
-  pigs: []

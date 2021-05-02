@@ -14,8 +14,9 @@ public class Spawner : MonoBehaviour
     }
 
     public EnemyCountPair[] totalEnemies;
+    public GameObject[] pigPrefabs;
 
-    [Header("Spawner Controls (Note: Spawn Rate is in terms of # seconds per enemy spawned")]
+    [Header("Spawner Controls (Note: Spawn Rate is in terms of # seconds per enemy spawned)")]
     public float startSpawnRate;
     public float spawnRateAcceleration;
     public float maxSpawnRate;
@@ -30,6 +31,7 @@ public class Spawner : MonoBehaviour
     private float cooldownTimer;
     private float spawnRate;
     private bool isFlooding = false;
+    private bool isPigDoneSpawning = false;
     private bool isDoneSpawning = false;
 
 
@@ -66,6 +68,22 @@ public class Spawner : MonoBehaviour
     {
         isFlooding = true;
         spawnRate = 0.5f;
+    }
+
+    public IEnumerator SpawnPigs()
+    {
+        foreach (GameObject pigObject in pigPrefabs)
+        {
+            GameObject pig = Instantiate(pigObject, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
+            pig.GetComponent<Pig>().initialDirection = spawnDirection;
+            yield return new WaitForSeconds(spawnRate);
+        }
+        isPigDoneSpawning = true;
+    }
+
+    public bool IsPigDoneSpawning()
+    {
+        return isPigDoneSpawning;
     }
 
     // Spawn a random enemy type dictated by the level description in LevelManager

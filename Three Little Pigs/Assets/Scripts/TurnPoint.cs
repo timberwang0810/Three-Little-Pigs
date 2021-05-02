@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurnPoint : MonoBehaviour
 {
     public Direction turnDirection;
-    private HashSet<GameObject> enemies = new HashSet<GameObject>();
+    private HashSet<GameObject> turningEntities = new HashSet<GameObject>();
 
     [Range(0, 180.0f)]
     public float leftAngleInDegrees;
@@ -15,12 +15,13 @@ public class TurnPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Pig"))
         {
-            if (!enemies.Contains(collision.gameObject))
+            if (!turningEntities.Contains(collision.gameObject))
             {
-                collision.gameObject.GetComponent<Enemy>().Turn(turnDirection, leftAngleInDegrees, rightAngleInDegrees);
-                enemies.Add(collision.gameObject);
+                if (collision.gameObject.CompareTag("Enemy")) collision.gameObject.GetComponent<Enemy>().Turn(turnDirection, leftAngleInDegrees, rightAngleInDegrees);
+                else collision.gameObject.GetComponent<Pig>().Turn(turnDirection, leftAngleInDegrees, rightAngleInDegrees);
+                turningEntities.Add(collision.gameObject);
             }
         }
     }

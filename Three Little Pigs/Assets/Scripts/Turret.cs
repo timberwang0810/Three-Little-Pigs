@@ -112,21 +112,23 @@ public class Turret : MonoBehaviour
     public void OnMouseOver()
     {
         if (building || loading) return;
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 10;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        Debug.Log("mousepos: " + mousePos + ", obj pos: " + transform.position);
-        if (mousePos.x <= transform.position.x + (xSize / 2) && mousePos.x >= transform.position.x - (xSize / 2)
-            && mousePos.y <= transform.position.y + (ySize / 2) && mousePos.y >= transform.position.y - (ySize / 2))
-        {
-            isMouseOver = true;
-            r.color = Color.red;
-        }
-        else
-        {
-            isMouseOver = false;
-            r.color = startColor;
-        }
+        isMouseOver = true;
+        //Vector3 mousePos = Input.mousePosition;
+        //mousePos.z = 10;
+        //mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        //Debug.Log("mousepos: " + mousePos + ", obj pos: " + transform.position);
+        //if (mousePos.x <= transform.position.x + (xSize / 2) && mousePos.x >= transform.position.x - (xSize / 2)
+        //    && mousePos.y <= transform.position.y + (ySize / 2) && mousePos.y >= transform.position.y - (ySize / 2))
+        //{
+        //    isMouseOver = true;
+        //    r.color = Color.red;
+        //}
+        //else
+        //{
+        //    isMouseOver = false;
+        //    r.color = startColor;
+        //}
+        r.color = Color.red;
     }
 
     public void OnMouseExit()
