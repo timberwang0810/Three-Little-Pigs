@@ -87,7 +87,6 @@ public class Pig : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(currDirection + " "  + speed);
         rb.velocity = currDirection * speed;
     }
 
