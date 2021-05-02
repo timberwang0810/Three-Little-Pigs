@@ -95,6 +95,7 @@ public class UIManager : MonoBehaviour
     public void btn_YesSell()
     {
         GameManager.S.AddMoney(selectedTurret.cost);
+        SoundManager.S.OnUIConfirm();
         HideSellPanel();
         ShowMoneyFlashText(selectedTurret.cost, selectedTurret.gameObject.transform.position);
         Destroy(selectedTurret.gameObject);
@@ -102,6 +103,7 @@ public class UIManager : MonoBehaviour
 
     public void btn_NoSell()
     {
+        SoundManager.S.OnUIExit();
         HideSellPanel();
     }
 
