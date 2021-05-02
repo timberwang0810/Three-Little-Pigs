@@ -79,6 +79,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c919f02f56ae9864e89ccdcd4d8e92e0, type: 3}
   audio: {fileID: 998571014767715405}
   quieterAudio: {fileID: -797579463222017999}
+  UIConfirmSFX: {fileID: 8300000, guid: d1852478b206d2147b91209804c3cd4b, type: 3}
+  UIExitSFX: {fileID: 8300000, guid: 9f4f9daa566906748af0d487d67e0d65, type: 3}
 --- !u!82 &998571014767715405
 AudioSource:
   m_ObjectHideFlags: 0

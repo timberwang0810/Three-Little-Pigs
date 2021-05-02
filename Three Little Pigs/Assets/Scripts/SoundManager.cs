@@ -35,6 +35,10 @@ public class SoundManager : MonoBehaviour
     public AudioSource audio;
     public AudioSource quieterAudio;
 
+    // UI sfx
+    public AudioClip UIConfirmSFX;
+    public AudioClip UIExitSFX;
+
     private void Awake()
     {
         // Singleton Definition
@@ -119,4 +123,15 @@ public class SoundManager : MonoBehaviour
     {
         audio.PlayOneShot(TurretBuildSFX);
     }
+
+    public void OnUIConfirm()
+    {
+        audio.PlayOneShot(UIConfirmSFX);
+    }
+    public void OnUIExit()
+    {
+        audio.PlayOneShot(UIExitSFX);
+    }
 }
+
+
