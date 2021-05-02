@@ -6,15 +6,20 @@ public class Pig : MonoBehaviour
 {
     public float speed;
     public Vector2 initialDirection;
+    public bool isJumping;
 
     private Rigidbody2D rb;
-    private Vector2 currDirection;
+    public Vector2 currDirection;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        currDirection = initialDirection;
-        currDirection.Normalize();
+        rb = GetComponent<Rigidbody2D>();   
+        if (isJumping) StartCoroutine(JumpStart());
+        else
+        { 
+            currDirection = initialDirection;
+            currDirection.Normalize();
+        }
     }
 
     // Update is called once per frame
@@ -22,9 +27,10 @@ public class Pig : MonoBehaviour
     {
         
     }
-
+    
     public void Turn(Direction dir, float leftAngle, float rightAngle)
     {
+        if (isJumping) return;
         switch (dir)
         {
             case Direction.LEFT:
@@ -61,8 +67,27 @@ public class Pig : MonoBehaviour
         //}
     }
 
+    private IEnumerator JumpStart()
+    {
+        currDirection = Vector2.up;
+        float origSpeed = speed;
+        speed = 0;
+        yield return new WaitForSeconds(2.0f);
+        speed = origSpeed;
+        speed *= 2;
+        yield return new WaitForSeconds(0.25f);
+        currDirection = Vector2.down;
+        speed /= 2;
+        yield return new WaitForSeconds(0.25f);
+        speed = origSpeed;
+        currDirection = initialDirection;
+        currDirection.Normalize();
+        isJumping = false;
+    }
+
     private void FixedUpdate()
     {
+        Debug.Log(currDirection + " "  + speed);
         rb.velocity = currDirection * speed;
     }
 
@@ -71,8 +96,8 @@ public class Pig : MonoBehaviour
         if (collision.gameObject.CompareTag("Hut"))
         {
             speed = 0;
-            collision.gameObject.GetComponent<Hut>().OnPigEntered(this.gameObject);
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            collision.gameObject.GetComponent<Hut>().OnPigEntered();
+            Destroy(this.gameObject);
         }        
     }
 }

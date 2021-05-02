@@ -124,10 +124,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
-  maxPigs: 1
-  hutSpawnOffset: {x: 0, y: 3, z: 0}
+  hutSpawnOffset: {x: -1, y: 3, z: 0}
   hutSpawnDirection: {x: 0, y: 1}
   timeBetweenSpawn: 2
+  pigs:
+  - {fileID: 3453832308992048005, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
+  - {fileID: 3453832308992048005, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
 --- !u!61 &8098687662159343688
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 5
-  maxPigs: 0
   hutSpawnOffset: {x: 0, y: 0, z: 0}
   hutSpawnDirection: {x: 0, y: 0}
   timeBetweenSpawn: 0
+  pigs: []
