@@ -125,6 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 20
   maxPigs: 1
+  hutSpawnOffset: {x: 0, y: 3, z: 0}
+  hutSpawnDirection: {x: 0, y: 1}
+  timeBetweenSpawn: 2
 --- !u!61 &8098687662159343688
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 5
   maxPigs: 0
+  hutSpawnOffset: {x: 0, y: 0, z: 0}
+  hutSpawnDirection: {x: 0, y: 0}
+  timeBetweenSpawn: 0

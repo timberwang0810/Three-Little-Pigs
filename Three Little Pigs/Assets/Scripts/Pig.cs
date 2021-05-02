@@ -71,7 +71,7 @@ public class Pig : MonoBehaviour
         if (collision.gameObject.CompareTag("Hut"))
         {
             speed = 0;
-            collision.gameObject.GetComponent<Hut>().OnPigEntered();
+            collision.gameObject.GetComponent<Hut>().OnPigEntered(this.gameObject);
             Destroy(this.gameObject);
         }        
     }

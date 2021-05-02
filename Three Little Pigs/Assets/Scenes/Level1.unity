@@ -6218,7 +6218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  money: 100
+  money: 10000
 --- !u!4 &1547663366
 Transform:
   m_ObjectHideFlags: 0
