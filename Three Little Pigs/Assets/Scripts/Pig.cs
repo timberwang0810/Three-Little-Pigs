@@ -72,7 +72,7 @@ public class Pig : MonoBehaviour
         {
             speed = 0;
             collision.gameObject.GetComponent<Hut>().OnPigEntered(this.gameObject);
-            Destroy(this.gameObject);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }        
     }
 }

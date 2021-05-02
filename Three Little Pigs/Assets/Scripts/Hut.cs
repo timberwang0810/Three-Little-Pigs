@@ -44,10 +44,12 @@ public class Hut : MonoBehaviour
 
     private IEnumerator ReleasePigs()
     {
-        foreach (GameObject pigObject in pigs)
+        foreach (GameObject pig in pigs)
         {
-            GameObject pig = Instantiate(pigObject, transform.position + hutSpawnOffset, Quaternion.identity);
+            pig.GetComponent<SpriteRenderer>().enabled = true;
+            pig.transform.position = transform.position + hutSpawnOffset;
             pig.GetComponent<Pig>().initialDirection = hutSpawnDirection;
+            pig.GetComponent<Pig>().speed = 2;
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
         GameManager.S.OnHutDestroyed();
