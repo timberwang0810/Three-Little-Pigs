@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BuildManager : MonoBehaviour
 {
@@ -51,17 +52,23 @@ public class BuildManager : MonoBehaviour
             {
                 int x = (int) Mathf.Floor(pos.x);
                 int y = (int) Mathf.Ceil(pos.y);
-                building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y - worldHeight / (gridHeight * 2), 0);
+                if (SceneManager.GetActiveScene().name == "Level1")
+                {
+                    building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y - worldHeight / (gridHeight * 4), 0);
+                } else
+                {
+                    building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y, 0);
+                }
             } else if (currentTurret.GetComponent<Turret>().material == Material.WOOD)
             {
                 int x = (int)Mathf.Floor(pos.x);
                 int y = (int)Mathf.Floor(pos.y);
-                building.transform.position = new Vector3(x, y, 0);
+                building.transform.position = new Vector3(x, y - worldHeight / (gridHeight * 4), 0);
             } else if (currentTurret.GetComponent<Turret>().material == Material.BRICK)
             {
                 int x = (int)Mathf.Floor(pos.x);
-                int y = (int)Mathf.Ceil(pos.y);
-                building.transform.position = new Vector3(x, y - worldHeight / (gridHeight * 2), 0);
+                int y = (int)Mathf.Floor(pos.y);
+                building.transform.position = new Vector3(x, y, 0);
             }
             
 

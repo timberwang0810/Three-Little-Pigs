@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -107,6 +108,10 @@ public class Spawner : MonoBehaviour
         }
         // Instantiate enemy at spawn location
         GameObject enemy = Instantiate(enemyPrefab, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
+        if (enemy.GetComponent<Enemy>().enemyType == EnemyType.WOLF && SceneManager.GetActiveScene().name == "Level1")
+        {
+            enemy.GetComponent<Enemy>().speed = 2;
+        }
         enemy.GetComponent<Enemy>().initialDirection = spawnDirection;
         if (!isFlooding)
         {

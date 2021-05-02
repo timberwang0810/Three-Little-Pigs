@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: 1
   cost: 75
-  shootInterval: 2
+  shootInterval: 3
   projectileObject: {fileID: 5456534833969666907, guid: 68922f4291cb6f84b914e69f12d338a6, type: 3}
   projectileSpeed: 15
   enemyInRange: {fileID: 0}
