@@ -7,9 +7,10 @@ public class Pig : MonoBehaviour
     public float speed;
     public Vector2 initialDirection;
     public bool isJumping;
+    public float jumpStartDelay;
 
     private Rigidbody2D rb;
-    public Vector2 currDirection;
+    private Vector2 currDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,12 +73,11 @@ public class Pig : MonoBehaviour
         currDirection = Vector2.up;
         float origSpeed = speed;
         speed = 0;
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(jumpStartDelay);
         speed = origSpeed;
         speed *= 2;
         yield return new WaitForSeconds(0.25f);
         currDirection = Vector2.down;
-        speed /= 2;
         yield return new WaitForSeconds(0.25f);
         speed = origSpeed;
         currDirection = initialDirection;

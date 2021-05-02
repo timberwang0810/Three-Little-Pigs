@@ -1846,6 +1846,10 @@ PrefabInstance:
       propertyPath: initialDirection.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3453832308992048001, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
+      propertyPath: jumpStartDelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3453832308992048003, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.51
@@ -7951,7 +7955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: pigPrefabs.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: xOffset
@@ -7987,7 +7991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyCount
@@ -8368,6 +8372,10 @@ PrefabInstance:
     - target: {fileID: 8756921400014774412, guid: 881b0f058529441f09638953540e14db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8756921400014774414, guid: 881b0f058529441f09638953540e14db, type: 3}
+      propertyPath: pigs.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8756921400014774414, guid: 881b0f058529441f09638953540e14db, type: 3}
       propertyPath: healthBar
