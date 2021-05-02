@@ -56,16 +56,16 @@ public class Pig : MonoBehaviour
         newDir.x = currDirection.x * Mathf.Cos(Mathf.Deg2Rad * degree) - currDirection.y * Mathf.Sin(Mathf.Deg2Rad * degree);
         newDir.y = currDirection.x * Mathf.Sin(Mathf.Deg2Rad * degree) + currDirection.y * Mathf.Cos(Mathf.Deg2Rad * degree);
         currDirection = newDir;
+        
+        if (currDirection.x == -1)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
 
-        //if (currDirection.x == -1)
-        //{
-        //    renderer.flipX = true;
-        //}
-
-        //if (currDirection.x == 1)
-        //{
-        //    renderer.flipX = false;
-        //}
+        if (currDirection.x == 1)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     private IEnumerator JumpStart()
@@ -83,6 +83,7 @@ public class Pig : MonoBehaviour
         currDirection = initialDirection;
         currDirection.Normalize();
         isJumping = false;
+        GetComponent<SpriteRenderer>().flipX = true;
     }
 
     private void FixedUpdate()
