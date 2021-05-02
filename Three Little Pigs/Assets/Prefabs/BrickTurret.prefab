@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df86675cc70609e44af0970f43becf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootInterval: 5
+  shootInterval: 4
   projectileObject: {fileID: 4956111570309925919, guid: 6afae4d4dd446044c829e7d745119b48, type: 3}
   projectileSpeed: 12
   material: 2

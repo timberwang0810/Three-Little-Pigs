@@ -135,10 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccac3d64cae248d3a259850fa2df999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
-  money: 30
+  maxHP: 3
+  money: 25
   power: 1
-  speed: 4
+  speed: 4.5
   attackCooldown: 1
   enemyType: 2
   initialDirection: {x: -1, y: 0}
