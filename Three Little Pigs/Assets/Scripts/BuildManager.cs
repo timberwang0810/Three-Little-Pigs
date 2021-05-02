@@ -51,10 +51,10 @@ public class BuildManager : MonoBehaviour
             if (currentTurret.GetComponent<Turret>().material == Material.STRAW)
             {
                 int x = (int) Mathf.Floor(pos.x);
-                int y = (int) Mathf.Ceil(pos.y);
+                int y = (int) Mathf.Floor(pos.y);
                 if (SceneManager.GetActiveScene().name == "Level1")
                 {
-                    building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y - worldHeight / (gridHeight * 4), 0);
+                    building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y - worldHeight / (gridHeight * 8), 0);
                 } else
                 {
                     building.transform.position = new Vector3(x + worldWidth / (gridWidth * 2), y, 0);

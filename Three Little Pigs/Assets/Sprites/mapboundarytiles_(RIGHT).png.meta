@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: d5b09b1a85ba13248ac10a743c65eda1
+guid: 85281b3b7c7a11f4eae13a30661adcf0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1297857595841623344
-    second: maptiles_0
+      213: 6837714140176387719
+    second: mapboundarytiles_(RIGHT)_0
   - first:
-      213: 2454809160005672239
-    second: maptiles_1
+      213: -3332400889566883700
+    second: mapboundarytiles_(RIGHT)_1
   - first:
-      213: -8105105014440366583
-    second: maptiles_2
+      213: -3977624915562977760
+    second: mapboundarytiles_(RIGHT)_2
   - first:
-      213: 1116138614767023611
-    second: maptiles_3
+      213: 4452345194851102103
+    second: mapboundarytiles_(RIGHT)_3
   - first:
-      213: 5936359646633124185
-    second: maptiles_4
+      213: -7253624254525473781
+    second: mapboundarytiles_(RIGHT)_4
   - first:
-      213: 7163477592719575120
-    second: maptiles_5
+      213: 787275462932941996
+    second: mapboundarytiles_(RIGHT)_5
   - first:
-      213: -6748978711341086081
-    second: maptiles_6
+      213: -6896363507027475657
+    second: mapboundarytiles_(RIGHT)_6
   - first:
-      213: 8356661919589627727
-    second: maptiles_7
+      213: 1390573718146039287
+    second: mapboundarytiles_(RIGHT)_7
   - first:
-      213: 3018801783462461538
-    second: maptiles_8
+      213: 8846278845166841224
+    second: mapboundarytiles_(RIGHT)_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: maptiles_0
+      name: mapboundarytiles_(RIGHT)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da41d694651dfde0800000000000000
-      internalID: -1297857595841623344
+      spriteID: 78e01e068c074ee50800000000000000
+      internalID: 6837714140176387719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_1
+      name: mapboundarytiles_(RIGHT)_1
       rect:
         serializedVersion: 2
         x: 300
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2d5385cceb311220800000000000000
-      internalID: 2454809160005672239
+      spriteID: c809b28fb0fe0c1d0800000000000000
+      internalID: -3332400889566883700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_2
+      name: mapboundarytiles_(RIGHT)_2
       rect:
         serializedVersion: 2
         x: 600
@@ -184,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90e6b0b9ee1e48f80800000000000000
-      internalID: -8105105014440366583
+      spriteID: 0262022b633acc8c0800000000000000
+      internalID: -3977624915562977760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_3
+      name: mapboundarytiles_(RIGHT)_3
       rect:
         serializedVersion: 2
         x: 0
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf5f84518225d7f00800000000000000
-      internalID: 1116138614767023611
+      spriteID: 79d648c7d58e9cd30800000000000000
+      internalID: 4452345194851102103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_4
+      name: mapboundarytiles_(RIGHT)_4
       rect:
         serializedVersion: 2
         x: 300
@@ -226,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951e78c75af226250800000000000000
-      internalID: 5936359646633124185
+      spriteID: b0cf9defb23f55b90800000000000000
+      internalID: -7253624254525473781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_5
+      name: mapboundarytiles_(RIGHT)_5
       rect:
         serializedVersion: 2
         x: 600
@@ -247,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0584586bae8c96360800000000000000
-      internalID: 7163477592719575120
+      spriteID: caccf74ccd6fcea00800000000000000
+      internalID: 787275462932941996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_6
+      name: mapboundarytiles_(RIGHT)_6
       rect:
         serializedVersion: 2
         x: 0
@@ -268,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7a47d1ae9fc652a0800000000000000
-      internalID: -6748978711341086081
+      spriteID: 73309a9cde13b40a0800000000000000
+      internalID: -6896363507027475657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_7
+      name: mapboundarytiles_(RIGHT)_7
       rect:
         serializedVersion: 2
         x: 300
@@ -289,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f477c298db3d8f370800000000000000
-      internalID: 8356661919589627727
+      spriteID: 7fdb618dd6f4c4310800000000000000
+      internalID: 1390573718146039287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maptiles_8
+      name: mapboundarytiles_(RIGHT)_8
       rect:
         serializedVersion: 2
         x: 600
@@ -310,8 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260889e4a30f4e920800000000000000
-      internalID: 3018801783462461538
+      spriteID: 88de8367dbb44ca70800000000000000
+      internalID: 8846278845166841224
       vertices: []
       indices: 
       edges: []
