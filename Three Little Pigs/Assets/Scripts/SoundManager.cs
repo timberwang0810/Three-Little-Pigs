@@ -6,6 +6,9 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager S;
 
+    public AudioSource BGM;
+    private float BGMOrigVolume;
+
     // played once upon building.
     public AudioClip TurretBuildSFX;
 
@@ -55,9 +58,9 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this);
         audio.volume = 1.0f;
         quieterAudio.volume = 0.3f;
+        BGMOrigVolume = BGM.volume;
     }
 
     public void MakeFireTurretSound(Material mat)
@@ -131,6 +134,17 @@ public class SoundManager : MonoBehaviour
     public void OnUIExit()
     {
         audio.PlayOneShot(UIExitSFX);
+    }
+
+    public void AdjustBGMVolume(float bgmVolume)
+    {
+        if (BGM) BGM.volume = bgmVolume * BGMOrigVolume;
+    }
+
+    public void AdjustSFXVolume(float sfxVolume)
+    {
+        audio.volume = sfxVolume;
+        quieterAudio.volume = sfxVolume * 0.3f;
     }
 }
 

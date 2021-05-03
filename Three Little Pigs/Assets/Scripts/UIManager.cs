@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public static UIManager S;
     public GameObject moneyFlashText;
     public GameObject pausePanel;
+    public GameObject settingsPanel;
 
     [Header("Sell Panel")]
     public GameObject sellPanel;
@@ -40,6 +41,8 @@ public class UIManager : MonoBehaviour
     {
         //DontDestroyOnLoad(this); commented out to case for levels only allowing certain turrets
         pausePanel.SetActive(false);
+        sellPanel.SetActive(false);
+        settingsPanel.SetActive(false);
         healthBar.fillAmount = 1;
         healthBar.color = maxHealthColor;
     }
@@ -53,6 +56,18 @@ public class UIManager : MonoBehaviour
     public void HidePausePanel()
     {
         pausePanel.SetActive(false);
+    }
+
+    public void ShowSettingsPanel()
+    {
+        HidePausePanel();
+        settingsPanel.SetActive(true);
+    }
+
+    public void HideSettingsPanel()
+    {
+        settingsPanel.SetActive(false);
+        ShowPausePanel();
     }
 
     public void HideAll()
