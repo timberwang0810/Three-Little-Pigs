@@ -84,7 +84,7 @@ public class UIManager : MonoBehaviour
     
     public void UpdateMoney(int money)
     {
-        moneyText.text = money.ToString();
+        moneyText.text = "$" + money.ToString();
     }
 
     public void ShowMoneyFlashText(int amount, Vector3 location)

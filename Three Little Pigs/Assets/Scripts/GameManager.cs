@@ -167,6 +167,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         LevelManager.S.GoToNextLevel();
+        yield return new WaitForSeconds(2.0f);
         ResetMoney();
         ResetLevel();
     }
