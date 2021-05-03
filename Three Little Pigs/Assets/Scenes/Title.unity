@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 1153457292}
   - component: {fileID: 1153457291}
   m_Layer: 0
-  m_Name: BGM
+  m_Name: BGM_Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,6 +1284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 998571014767715442, guid: 0ff8f202d122346308e54c1c2c2c62f7, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 1153457291}
     - target: {fileID: 998571014767715443, guid: 0ff8f202d122346308e54c1c2c2c62f7, type: 3}
       propertyPath: m_RootOrder
       value: 6
