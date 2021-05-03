@@ -36,7 +36,6 @@ public class Turret : MonoBehaviour
         r = GetComponent<SpriteRenderer>();
         xSize = r.bounds.size.x;
         ySize = r.bounds.size.y;
-        Debug.Log("x: " + xSize + ", y: " + ySize);
     }
 
     // Update is called once per frame
@@ -97,6 +96,7 @@ public class Turret : MonoBehaviour
             renderer.color = Color.white;
             animator.enabled = true;
             animator.SetBool("load", true);
+            transform.GetChild(1).gameObject.SetActive(false);
             return true;
         }
         return false;
