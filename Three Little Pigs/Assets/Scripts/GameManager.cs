@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -158,15 +159,31 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         LevelManager.S.RestartLevel();
-        money = 100; //figure out how much money to give
+        ResetMoney();
         ResetLevel();
     }
 
     private IEnumerator LevelCompleteCoroutine()
     {
         yield return new WaitForSeconds(3.0f);
-        money = 200;
         LevelManager.S.GoToNextLevel();
+        ResetMoney();
         ResetLevel();
+    }
+
+    private void ResetMoney()
+    {
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            money = 100;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            money = 200;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            money = 400;
+        }
     }
 }
