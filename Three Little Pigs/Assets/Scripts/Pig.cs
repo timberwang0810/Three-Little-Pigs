@@ -11,22 +11,40 @@ public class Pig : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 currDirection;
+
+    private void Awake()
+    {
+      
+        if (!isJumping)
+        {
+            currDirection = initialDirection;
+            currDirection.Normalize();
+            Debug.Log("awake to: " + initialDirection);
+        }
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
         if (isJumping) StartCoroutine(JumpStart());
-        else
-        { 
-            currDirection = initialDirection;
-            currDirection.Normalize();
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetCurrentDirection(Vector2 newDir)
+    {
+        currDirection = newDir;
+    }
+
+    public void RunAroundForever(Vector3 initDirection, float runSpeed, float timeBetweenTurning)
+    {
+        speed = runSpeed;
+        StartCoroutine(RunAroundCoroutine(initDirection, timeBetweenTurning));
     }
     
     public void Turn(Direction dir, float leftAngle, float rightAngle)
@@ -84,6 +102,22 @@ public class Pig : MonoBehaviour
         currDirection.Normalize();
         isJumping = false;
         GetComponent<SpriteRenderer>().flipX = true;
+    }
+
+    private IEnumerator RunAroundCoroutine(Vector2 initDirection, float timeBetweenTurning)
+    {
+        currDirection = initDirection;
+        float timer = 0;
+        while (true)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBetweenTurning)
+            {
+                timer = 0;
+                Turn(Direction.LEFT, 180, 180);
+            }
+            yield return null;
+        }
     }
 
     private void FixedUpdate()

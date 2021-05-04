@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  initialDirection: {x: 0, y: 1}
+  initialDirection: {x: 0, y: 0}
   isJumping: 0
   jumpStartDelay: 0
 --- !u!50 &3453832308992048002

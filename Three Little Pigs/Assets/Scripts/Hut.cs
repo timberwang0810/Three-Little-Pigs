@@ -44,7 +44,8 @@ public class Hut : MonoBehaviour
         foreach (GameObject pigObject in pigs)
         {
             GameObject pig = Instantiate(pigObject, transform.position + hutSpawnOffset, Quaternion.identity);
-            pig.GetComponent<Pig>().initialDirection = hutSpawnDirection;
+            if (LevelManager.S.isFinalLevel) pig.GetComponent<Pig>().RunAroundForever(hutSpawnDirection, 3.0f, 2.0f);
+            else pig.GetComponent<Pig>().initialDirection = hutSpawnDirection;
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
         GameManager.S.OnHutDestroyed();
