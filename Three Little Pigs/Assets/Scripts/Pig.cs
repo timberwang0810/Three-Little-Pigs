@@ -6,20 +6,19 @@ public class Pig : MonoBehaviour
 {
     public float speed;
     public Vector2 initialDirection;
-    public bool isJumping;
+    public bool isJumpStarting;
     public float jumpStartDelay;
 
+    private bool isJumping = false;
     private Rigidbody2D rb;
     private Vector2 currDirection;
 
     private void Awake()
     {
-      
-        if (!isJumping)
+        if (!isJumpStarting)
         {
             currDirection = initialDirection;
             currDirection.Normalize();
-            Debug.Log("awake to: " + initialDirection);
         }
         
     }
@@ -27,13 +26,19 @@ public class Pig : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if (isJumping) StartCoroutine(JumpStart());
+        if (isJumpStarting) StartCoroutine(JumpStart());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetJump(bool newIsJump)
+    {
+        isJumping = newIsJump;
+        GetComponent<Animator>().SetBool("isJumping", isJumping);
     }
 
     public void SetCurrentDirection(Vector2 newDir)
@@ -122,6 +127,7 @@ public class Pig : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //if (GetComponent<Animator>().GetBool("isJumping")) return;
         rb.velocity = currDirection * speed;
     }
 

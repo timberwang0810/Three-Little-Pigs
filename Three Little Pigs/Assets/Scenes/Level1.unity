@@ -1122,6 +1122,7 @@ MonoBehaviour:
   isFinalLevel: 0
   spawners:
   - {fileID: 1146737789}
+  hut: {fileID: 2954328813776326399}
 --- !u!4 &189670770
 Transform:
   m_ObjectHideFlags: 0
@@ -12933,6 +12934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 881b0f058529441f09638953540e14db, type: 3}
+--- !u!1 &2954328813776326399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8756921400014774419, guid: 881b0f058529441f09638953540e14db, type: 3}
+  m_PrefabInstance: {fileID: 2954328813776326398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4112658532250679951
 PrefabInstance:
   m_ObjectHideFlags: 0

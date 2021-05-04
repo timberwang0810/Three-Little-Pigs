@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         finishedSpawners++;
         Debug.Log("done spawning " + finishedSpawners);
         if (finishedSpawners == LevelManager.S.spawners.Length) isSpawning = false;
+        if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
     }
 
     public void OnEnemySpawned()
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour
     private void OnLevelWon()
     {
         // TODO: On final level when enemies are dead
+        LevelManager.S.hut.GetComponent<Hut>().OnPigsVictory();
     }
 
     private void OnLevelLost()

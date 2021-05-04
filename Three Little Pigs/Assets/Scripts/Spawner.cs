@@ -118,6 +118,16 @@ public class Spawner : MonoBehaviour
             currEnemies[enemyPrefab.name] += 1;
             numEnemiesToSpawn--;
             GameManager.S.OnEnemySpawned();
-        }   
+        }
+        if (numEnemiesToSpawn <= 0 && !isFlooding)
+        {
+            if (!isDoneSpawning)
+            {
+                isDoneSpawning = true;
+                GameManager.S.OnEnemiesFinishedSpawning();
+                return;
+            }
+            return;
+        }
     }
 }

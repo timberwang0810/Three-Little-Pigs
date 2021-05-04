@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public bool isFinalLevel = false;
 
     public GameObject[] spawners;
+    public GameObject hut;
 
     private void Awake()
     {
