@@ -76,7 +76,7 @@ public class Spawner : MonoBehaviour
         foreach (GameObject pigObject in pigPrefabs)
         {
             GameObject pig = Instantiate(pigObject, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
-            pig.GetComponent<Pig>().initialDirection = spawnDirection;
+            pig.GetComponent<Pig>().SetCurrentDirection(spawnDirection);
             yield return new WaitForSeconds(spawnRate);
         }
         isPigDoneSpawning = true;
@@ -118,6 +118,16 @@ public class Spawner : MonoBehaviour
             currEnemies[enemyPrefab.name] += 1;
             numEnemiesToSpawn--;
             GameManager.S.OnEnemySpawned();
-        }   
+        }
+        if (numEnemiesToSpawn <= 0 && !isFlooding)
+        {
+            if (!isDoneSpawning)
+            {
+                isDoneSpawning = true;
+                GameManager.S.OnEnemiesFinishedSpawning();
+                return;
+            }
+            return;
+        }
     }
 }

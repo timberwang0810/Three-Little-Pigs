@@ -6,27 +6,50 @@ public class Pig : MonoBehaviour
 {
     public float speed;
     public Vector2 initialDirection;
-    public bool isJumping;
+    public bool isJumpStarting;
     public float jumpStartDelay;
 
+    private bool isJumping = false;
     private Rigidbody2D rb;
     private Vector2 currDirection;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();   
-        if (isJumping) StartCoroutine(JumpStart());
-        else
-        { 
+        if (!isJumpStarting)
+        {
             currDirection = initialDirection;
             currDirection.Normalize();
         }
+        
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        if (isJumpStarting) StartCoroutine(JumpStart());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetJump(bool newIsJump)
+    {
+        isJumping = newIsJump;
+        GetComponent<Animator>().SetBool("isJumping", isJumping);
+    }
+
+    public void SetCurrentDirection(Vector2 newDir)
+    {
+        currDirection = newDir;
+    }
+
+    public void RunAroundForever(Vector3 initDirection, float runSpeed, float timeBetweenTurning)
+    {
+        speed = runSpeed;
+        StartCoroutine(RunAroundCoroutine(initDirection, timeBetweenTurning));
     }
     
     public void Turn(Direction dir, float leftAngle, float rightAngle)
@@ -86,8 +109,25 @@ public class Pig : MonoBehaviour
         GetComponent<SpriteRenderer>().flipX = true;
     }
 
+    private IEnumerator RunAroundCoroutine(Vector2 initDirection, float timeBetweenTurning)
+    {
+        currDirection = initDirection;
+        float timer = 0;
+        while (true)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBetweenTurning)
+            {
+                timer = 0;
+                Turn(Direction.LEFT, 180, 180);
+            }
+            yield return null;
+        }
+    }
+
     private void FixedUpdate()
     {
+        //if (GetComponent<Animator>().GetBool("isJumping")) return;
         rb.velocity = currDirection * speed;
     }
 

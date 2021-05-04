@@ -1016,6 +1016,7 @@ MonoBehaviour:
   spawners:
   - {fileID: 312231152}
   - {fileID: 1047063702}
+  hut: {fileID: 4126825376383311280}
 --- !u!4 &189670770
 Transform:
   m_ObjectHideFlags: 0
@@ -18238,6 +18239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb14330fbd9f24c8aa2754074eaa0e4b, type: 3}
+--- !u!1 &4126825376383311280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7510977415424144322, guid: bb14330fbd9f24c8aa2754074eaa0e4b, type: 3}
+  m_PrefabInstance: {fileID: 4126825376383311279}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6026905944414600442
 PrefabInstance:
   m_ObjectHideFlags: 0

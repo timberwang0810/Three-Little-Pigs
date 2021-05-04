@@ -39,17 +39,35 @@ public class Hut : MonoBehaviour
         if (currPigs == pigs.Length) GameManager.S.ResetLevel();
     }
 
+    public void OnPigsVictory()
+    {
+        Debug.Log("reached");
+        StartCoroutine(VictoryCoroutine());
+    }
+
     private IEnumerator ReleasePigs()
     {
         foreach (GameObject pigObject in pigs)
         {
             GameObject pig = Instantiate(pigObject, transform.position + hutSpawnOffset, Quaternion.identity);
-            pig.GetComponent<Pig>().initialDirection = hutSpawnDirection;
+            if (LevelManager.S.isFinalLevel) pig.GetComponent<Pig>().RunAroundForever(hutSpawnDirection, 3.0f, 2.0f);
+            else pig.GetComponent<Pig>().initialDirection = hutSpawnDirection;
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
         GameManager.S.OnHutDestroyed();
         Destroy(this.gameObject, 1.0f);
     }
 
+    private IEnumerator VictoryCoroutine()
+    {
+        for (int i = 0; i < pigs.Length; i++)
+        {
+            GameObject pig = Instantiate(pigs[i], transform.position + hutSpawnOffset + new Vector3(i,0,0), Quaternion.identity);
+            yield return new WaitForSeconds(0.1f);
+            pig.GetComponent<Pig>().SetJump(true);
+            Debug.Log("spawend: " + pig.name);
+            yield return new WaitForSeconds(timeBetweenSpawn);
+        }
+    }
 
 }
