@@ -949,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyPrefab
@@ -957,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 4657735032031348906, guid: 7c9750dafe62b674e86892b06bbc0114, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyPrefab
@@ -965,7 +965,7 @@ PrefabInstance:
       objectReference: {fileID: 2574549914830626975, guid: 038db657907a7534288f99c7e5b6edbd, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: spawnDirection.y
@@ -5677,7 +5677,7 @@ PrefabInstance:
       objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyPrefab
@@ -5685,7 +5685,7 @@ PrefabInstance:
       objectReference: {fileID: 4657735032031348906, guid: 7c9750dafe62b674e86892b06bbc0114, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyCount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyPrefab
@@ -5693,7 +5693,7 @@ PrefabInstance:
       objectReference: {fileID: 2574549914830626975, guid: 038db657907a7534288f99c7e5b6edbd, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: spawnDirection.y
@@ -17679,7 +17679,7 @@ PrefabInstance:
       objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyPrefab
@@ -17687,7 +17687,7 @@ PrefabInstance:
       objectReference: {fileID: 4657735032031348906, guid: 7c9750dafe62b674e86892b06bbc0114, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyCount
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyPrefab
@@ -17695,7 +17695,7 @@ PrefabInstance:
       objectReference: {fileID: 2574549914830626975, guid: 038db657907a7534288f99c7e5b6edbd, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: spawnDirection.y
