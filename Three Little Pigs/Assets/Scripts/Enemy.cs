@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     private SpriteRenderer renderer;
 
+    private bool attacking = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,6 +128,7 @@ public class Enemy : MonoBehaviour
         {
             animator.SetBool("walking", false);
             speed = 0;
+            attacking = true;
             StartCoroutine(AttackHut(collision.gameObject.GetComponent<Hut>()));
         }
 
@@ -144,5 +147,10 @@ public class Enemy : MonoBehaviour
             hut.TakeDamage(power);
             yield return new WaitForSeconds(attackCooldown);
         }
+    }
+
+    public bool GetAttacking()
+    {
+        return attacking;
     }
 }

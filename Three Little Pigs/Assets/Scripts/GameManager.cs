@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     public void OnEnemiesFinishedSpawning()
     {
         finishedSpawners++;
-        Debug.Log("done spawning " + finishedSpawners);
+        //Debug.Log("done spawning " + finishedSpawners);
         if (finishedSpawners == LevelManager.S.spawners.Length) isSpawning = false;
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
     }
@@ -90,13 +90,13 @@ public class GameManager : MonoBehaviour
     public void OnEnemySpawned()
     {
         numEnemies++;
-        Debug.Log("spawned " + numEnemies);
+        //Debug.Log("spawned " + numEnemies);
     }
 
     public void OnEnemyDeath(int amount)
     {
         numEnemies--;
-        Debug.Log("died " + numEnemies);
+        //sDebug.Log("died " + numEnemies);
         money += amount;
         UIManager.S.UpdateMoney(money);
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
