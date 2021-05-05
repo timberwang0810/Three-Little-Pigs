@@ -949,7 +949,7 @@ PrefabInstance:
       objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyPrefab
@@ -957,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 4657735032031348906, guid: 7c9750dafe62b674e86892b06bbc0114, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyCount
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyPrefab
@@ -965,7 +965,7 @@ PrefabInstance:
       objectReference: {fileID: 2574549914830626975, guid: 038db657907a7534288f99c7e5b6edbd, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: spawnDirection.y
@@ -1929,6 +1929,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1944,6 +1945,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b6fee95498c4e5f88b8cd10e8c689a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5677,7 +5690,7 @@ PrefabInstance:
       objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyPrefab
@@ -5685,7 +5698,7 @@ PrefabInstance:
       objectReference: {fileID: 4657735032031348906, guid: 7c9750dafe62b674e86892b06bbc0114, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyCount
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyPrefab
@@ -5693,7 +5706,7 @@ PrefabInstance:
       objectReference: {fileID: 2574549914830626975, guid: 038db657907a7534288f99c7e5b6edbd, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: spawnDirection.y
@@ -17679,7 +17692,7 @@ PrefabInstance:
       objectReference: {fileID: 6880198901594059579, guid: b09827e1c9df0044d81145076f2a96ad, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[0].enemyCount
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyPrefab
@@ -17687,7 +17700,7 @@ PrefabInstance:
       objectReference: {fileID: 4657735032031348906, guid: 7c9750dafe62b674e86892b06bbc0114, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[1].enemyCount
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyPrefab
@@ -17695,7 +17708,7 @@ PrefabInstance:
       objectReference: {fileID: 2574549914830626975, guid: 038db657907a7534288f99c7e5b6edbd, type: 3}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: totalEnemies.Array.data[2].enemyCount
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: spawnDirection.y

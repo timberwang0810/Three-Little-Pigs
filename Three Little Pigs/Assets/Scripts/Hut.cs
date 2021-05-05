@@ -29,6 +29,7 @@ public class Hut : MonoBehaviour
             isDestroyed = true;
             UIManager.S.AdjustHealthBar(0);
             GetComponent<SpriteRenderer>().enabled = false;
+            Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset, 5);
             StartCoroutine(ReleasePigs());
         }
     }
@@ -41,7 +42,7 @@ public class Hut : MonoBehaviour
 
     public void OnPigsVictory()
     {
-        Debug.Log("reached");
+        Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset + new Vector3(2, 0, 0), 5);
         StartCoroutine(VictoryCoroutine());
     }
 
