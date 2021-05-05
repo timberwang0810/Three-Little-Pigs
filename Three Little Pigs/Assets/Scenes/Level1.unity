@@ -2185,6 +2185,10 @@ PrefabInstance:
       propertyPath: jumpStartDelay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3453832308992048001, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
+      propertyPath: isJumpStarting
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3453832308992048003, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.51
