@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager S;
 
-    //public AudioSource BGM;
-    //private float BGMOrigVolume;
+    public AudioSource BGM;
+    private float BGMOrigVolume;
 
     // played once upon building.
     public AudioClip TurretBuildSFX;
@@ -54,13 +55,13 @@ public class SoundManager : MonoBehaviour
         {
             S = this;
         }
+        BGMOrigVolume = BGM.volume;
     }
     // Start is called before the first frame update
     void Start()
     {
         audio.volume = 1.0f;
-        quieterAudio.volume = 0.3f;
-        //BGMOrigVolume = BGM.volume;
+        quieterAudio.volume = 0.3f;  
     }
 
     public void MakeFireTurretSound(Material mat)
@@ -138,7 +139,7 @@ public class SoundManager : MonoBehaviour
 
     public void AdjustBGMVolume(float bgmVolume)
     {
-        //if (BGM) BGM.volume = bgmVolume * BGMOrigVolume;
+        if (BGM) BGM.volume = bgmVolume * BGMOrigVolume;
     }
 
     public void AdjustSFXVolume(float sfxVolume)

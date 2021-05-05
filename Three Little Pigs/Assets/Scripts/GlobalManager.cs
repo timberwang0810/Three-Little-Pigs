@@ -14,8 +14,8 @@ public class GlobalManager : MonoBehaviour
     private void Start()
     {
         if (SoundManager.S) SoundManager.S.AdjustBGMVolume(currentBGMVolume);
-        bgmSlider.value = currentBGMVolume;
-        sfxSlider.value = currentSFXVolume;
+        if (bgmSlider) bgmSlider.value = currentBGMVolume;
+        if (sfxSlider) sfxSlider.value = currentSFXVolume;
     }
 
     public void OnBGMVolumeAdjusted()

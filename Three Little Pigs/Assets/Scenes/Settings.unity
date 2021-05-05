@@ -1525,6 +1525,14 @@ PrefabInstance:
       propertyPath: BGM
       value: 
       objectReference: {fileID: 1852590048}
+    - target: {fileID: 998571014767715442, guid: 0ff8f202d122346308e54c1c2c2c62f7, type: 3}
+      propertyPath: debugText
+      value: 
+      objectReference: {fileID: 1498057744}
+    - target: {fileID: 998571014767715442, guid: 0ff8f202d122346308e54c1c2c2c62f7, type: 3}
+      propertyPath: BGMOrigVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 998571014767715443, guid: 0ff8f202d122346308e54c1c2c2c62f7, type: 3}
       propertyPath: m_RootOrder
       value: 7
