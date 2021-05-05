@@ -52,7 +52,7 @@ public class Hut : MonoBehaviour
         {
             GameObject pig = Instantiate(pigObject, transform.position + hutSpawnOffset, Quaternion.identity);
             if (LevelManager.S.isFinalLevel) pig.GetComponent<Pig>().RunAroundForever(hutSpawnDirection, 3.0f, 2.0f);
-            else pig.GetComponent<Pig>().initialDirection = hutSpawnDirection;
+            else pig.GetComponent<Pig>().SetCurrentDirection(hutSpawnDirection);
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
         GameManager.S.OnHutDestroyed();
