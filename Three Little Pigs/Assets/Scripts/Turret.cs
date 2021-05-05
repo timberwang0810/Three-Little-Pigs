@@ -111,36 +111,21 @@ public class Turret : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if (building || loading) return;
+        if (building || loading || GameManager.S.gameState != GameManager.GameState.playing) return;
         isMouseOver = true;
-        //Vector3 mousePos = Input.mousePosition;
-        //mousePos.z = 10;
-        //mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        //Debug.Log("mousepos: " + mousePos + ", obj pos: " + transform.position);
-        //if (mousePos.x <= transform.position.x + (xSize / 2) && mousePos.x >= transform.position.x - (xSize / 2)
-        //    && mousePos.y <= transform.position.y + (ySize / 2) && mousePos.y >= transform.position.y - (ySize / 2))
-        //{
-        //    isMouseOver = true;
-        //    r.color = Color.red;
-        //}
-        //else
-        //{
-        //    isMouseOver = false;
-        //    r.color = startColor;
-        //}
         r.color = Color.red;
     }
 
     public void OnMouseExit()
     {
-        if (building || loading) return;
+        if (building || loading || GameManager.S.gameState != GameManager.GameState.playing) return;
         isMouseOver = false;
         r.color = startColor;
     }
 
     public void OnMouseDown()
     {
-        if (building || loading || !isMouseOver) return;
+        if (building || loading || !isMouseOver || GameManager.S.gameState != GameManager.GameState.playing) return;
         UIManager.S.ShowSellPanel(this);
     }
 }

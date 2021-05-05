@@ -39,6 +39,7 @@ public class PreparationTime : MonoBehaviour
 
     public void btn_StartAttack()
     {
+        if (GameManager.S.gameState != GameManager.GameState.playing) return;
         timeLeft = 0;
     }
 }

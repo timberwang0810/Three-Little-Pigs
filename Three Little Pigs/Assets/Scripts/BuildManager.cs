@@ -91,6 +91,7 @@ public class BuildManager : MonoBehaviour
 
     public void btn_BuildTurret(String material)
     {
+        if (GameManager.S.gameState != GameManager.GameState.playing) return;
         GameObject turretType = MatchTurret((Material)Enum.Parse(typeof(Material), material.ToUpper()));
         if (GameManager.S.money >= turretType.GetComponent<Turret>().cost)
         {
