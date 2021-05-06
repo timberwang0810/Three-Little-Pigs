@@ -30,7 +30,7 @@ public class Hut : MonoBehaviour
             isDestroyed = true;
             UIManager.S.AdjustHealthBar(0);
             GetComponent<SpriteRenderer>().enabled = false;
-            Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset * 3, 5);
+            Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutCameraPanOffset, 5);
             GetComponent<SpriteRenderer>().enabled = false;
             GameManager.S.OnHutDestroyed();
         }
