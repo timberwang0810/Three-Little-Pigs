@@ -72,6 +72,21 @@ public class Spawner : MonoBehaviour
         spawnRate = 0.5f;
     }
 
+    public void Flood(float time)
+    {
+        StartCoroutine(ControlledFlood(time));
+    }
+
+    private IEnumerator ControlledFlood(float time)
+    {
+        isFlooding = true;
+        spawnRate = 0.5f;
+        yield return new WaitForSeconds(time);
+        isFlooding = false;
+        spawnRate = 0;
+        GameManager.S.OnEnemiesFinishedSpawning();
+    }
+
     public IEnumerator SpawnPigs()
     {
         foreach (GameObject pigObject in pigPrefabs)
@@ -120,6 +135,10 @@ public class Spawner : MonoBehaviour
         {
             currEnemies[enemyPrefab.name] += 1;
             numEnemiesToSpawn--;
+            GameManager.S.OnEnemySpawned();
+        }
+        else if (LevelManager.S.isFinalLevel)
+        {
             GameManager.S.OnEnemySpawned();
         }
         if (numEnemiesToSpawn <= 0 && !isFlooding)
