@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d57f962519ea641824b8c87387f351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prepTime: 100
+  prepTime: 20
   timeText: {fileID: 0}
   spawners: []

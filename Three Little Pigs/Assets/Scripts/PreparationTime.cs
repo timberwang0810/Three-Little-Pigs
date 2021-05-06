@@ -40,6 +40,12 @@ public class PreparationTime : MonoBehaviour
     public void btn_StartAttack()
     {
         if (GameManager.S.gameState != GameManager.GameState.playing) return;
+        StartCoroutine(StartAttackCoroutine());
+    }
+
+    private IEnumerator StartAttackCoroutine()
+    {
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Enemies Incoming!!!", 0.25f, 2.5f));
         timeLeft = 0;
     }
 }
