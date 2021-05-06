@@ -62,7 +62,7 @@ public class Hut : MonoBehaviour
 
     private IEnumerator VictoryCoroutine()
     {
-        yield return StartCoroutine(UIManager.S.FlashMiddleText("Is it Safe...Now??"));
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Is it Safe...Now??", 1.5f, 3.0f));
         Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset + new Vector3(2, 0, 0), 5);
         for (int i = 0; i < pigs.Length; i++)
         {

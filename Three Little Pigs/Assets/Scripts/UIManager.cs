@@ -160,28 +160,28 @@ public class UIManager : MonoBehaviour
         Destroy(moneyFlashTextObject);
     }
 
-    public IEnumerator FlashMiddleText(string message)
+    public IEnumerator FlashMiddleText(string message, float enterExitTime, float duration)
     {
         middleText.text = message;
         middleText.enabled = true;
         middleText.transform.position = new Vector3(-21, middleText.transform.position.y, middleText.transform.position.z);
         float timer = 0;
-        while (timer < 1)
+        while (timer < enterExitTime)
         {
             timer += Time.deltaTime;
             Vector3 newLocation = middleText.transform.position;
-            newLocation.x = Mathf.Lerp(-21, 0, timer / 1);
+            newLocation.x = Mathf.Lerp(-21, 0, timer / enterExitTime);
             middleText.transform.position = newLocation;
             yield return null;
         }
         middleText.transform.position = new Vector3(0, middleText.transform.position.y, middleText.transform.position.z);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(duration);
         timer = 0;
-        while (timer < 1)
+        while (timer < enterExitTime)
         {
             timer += Time.deltaTime;
             Vector3 newLocation = middleText.transform.position;
-            newLocation.x = Mathf.Lerp(0, 21, timer / 1);
+            newLocation.x = Mathf.Lerp(0, 21, timer / enterExitTime);
             middleText.transform.position = newLocation;
             yield return null;
         }
