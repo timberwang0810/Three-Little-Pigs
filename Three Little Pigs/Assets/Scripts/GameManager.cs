@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void StartNewGame()
     {
+        Time.timeScale = 1;
         gameState = GameState.getReady;
         UIManager.S.HideAll();
         UIManager.S.AdjustHealthBar(1);
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
         isEnemiesCleared = false;
         finishedSpawners = 0;
         numEnemies = 0;
+        ResetMoney();
         yield return StartCoroutine(UIManager.S.FlashMiddleText("Build Phase", 0.25f, 2.0f));
         gameState = GameState.playing;
     }
