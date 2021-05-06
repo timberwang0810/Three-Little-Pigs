@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("level complete!");
         if (LevelManager.S.isFinalLevel) OnLevelWon();
-        else FloodEnemies();
+        else StartCoroutine(FloodEnemies());
     }
 
     private void OnLevelCleared()
@@ -148,8 +148,9 @@ public class GameManager : MonoBehaviour
         UIManager.S.UpdateMoney(money);
     }
 
-    private void FloodEnemies()
+    private IEnumerator FloodEnemies()
     {
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Final Wave Incoming!!!"));
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
         for (int i = 0; i < LevelManager.S.spawners.Length; i++)
         {

@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject settingsPanel;
 
+    public GameObject winningPanel;
+
     [Header("Sell Panel")]
     public GameObject sellPanel;
     public TextMeshProUGUI sellText;
@@ -44,6 +46,7 @@ public class UIManager : MonoBehaviour
         pausePanel.SetActive(false);
         sellPanel.SetActive(false);
         settingsPanel.SetActive(false);
+        winningPanel.SetActive(false);
         middleText.enabled = false;
         healthBar.fillAmount = 1;
         healthBar.color = maxHealthColor;
@@ -76,6 +79,7 @@ public class UIManager : MonoBehaviour
     {
         HidePausePanel();
         HideSellPanel();
+        winningPanel.SetActive(false);
         middleText.enabled = false;
     }
 
@@ -123,6 +127,11 @@ public class UIManager : MonoBehaviour
     {
         SoundManager.S.OnUIExit();
         HideSellPanel();
+    }
+
+    public void ShowWinningPanel()
+    {
+        winningPanel.SetActive(true);
     }
 
     private IEnumerator FlashMoneyText(GameObject moneyFlashTextObject)

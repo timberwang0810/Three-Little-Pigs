@@ -42,7 +42,6 @@ public class Hut : MonoBehaviour
 
     public void OnPigsVictory()
     {
-        Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset + new Vector3(2, 0, 0), 5);
         StartCoroutine(VictoryCoroutine());
     }
 
@@ -61,14 +60,16 @@ public class Hut : MonoBehaviour
 
     private IEnumerator VictoryCoroutine()
     {
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Is it Safe...Now??"));
+        Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset + new Vector3(2, 0, 0), 5);
         for (int i = 0; i < pigs.Length; i++)
         {
             GameObject pig = Instantiate(pigs[i], transform.position + hutSpawnOffset + new Vector3(i,0,0), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             pig.GetComponent<Pig>().SetJump(true);
-            Debug.Log("spawend: " + pig.name);
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
+        UIManager.S.ShowWinningPanel();
     }
 
 }
