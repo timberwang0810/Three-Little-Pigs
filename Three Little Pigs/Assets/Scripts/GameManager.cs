@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private int numEnemies;
     private bool isSpawning;
 
+    private bool isEnemiesCleared = false;
+
     private int finishedSpawners = 0;
 
     private void Awake()
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator ResetLevel()
     {
         isSpawning = true;
+        isEnemiesCleared = false;
         finishedSpawners = 0;
         numEnemies = 0;
         yield return StartCoroutine(UIManager.S.FlashMiddleText("Build Phase"));
@@ -114,6 +117,8 @@ public class GameManager : MonoBehaviour
     private void OnEnemiesCleared()
     {
         Debug.Log("level complete!");
+        if (isEnemiesCleared) return;
+        isEnemiesCleared = true;
         if (LevelManager.S.isFinalLevel) OnLevelWon();
         else StartCoroutine(FloodEnemies());
     }
@@ -135,7 +140,7 @@ public class GameManager : MonoBehaviour
     {
         // TODO: On final level when the brick hut is destroyed
         gameState = GameState.gameOver;
-        UIManager.S.ShowLosingPanel();
+        StartCoroutine(LevelManager.S.hut.GetComponent<Hut>().ReleasePigs(true));
     }
 
     public void AddMoney(int amount)
@@ -163,12 +168,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LevelCompleteCoroutine()
     {
+        yield return StartCoroutine(LevelManager.S.hut.GetComponent<Hut>().ReleasePigs(false));
         yield return new WaitForSeconds(3.0f);
         LevelManager.S.GoToNextLevel();
         yield return new WaitForSeconds(2.0f);
         ResetMoney();
         ResetLevel();
     }
+
 
     private void ResetMoney()
     {

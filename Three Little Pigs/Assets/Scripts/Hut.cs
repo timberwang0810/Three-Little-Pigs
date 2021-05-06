@@ -7,6 +7,7 @@ public class Hut : MonoBehaviour
 {
     public float maxHP;
     public Vector3 hutSpawnOffset;
+    public Vector3 hutCameraPanOffset;
     public Vector2 hutSpawnDirection;
     public float timeBetweenSpawn;
     public GameObject[] pigs;
@@ -30,7 +31,8 @@ public class Hut : MonoBehaviour
             UIManager.S.AdjustHealthBar(0);
             GetComponent<SpriteRenderer>().enabled = false;
             Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset * 3, 5);
-            StartCoroutine(ReleasePigs());
+            GetComponent<SpriteRenderer>().enabled = false;
+            GameManager.S.OnHutDestroyed();
         }
     }
 
@@ -44,17 +46,17 @@ public class Hut : MonoBehaviour
     {
         StartCoroutine(VictoryCoroutine());
     }
-
-    private IEnumerator ReleasePigs()
+ 
+    public IEnumerator ReleasePigs(bool isLoss)
     {
         foreach (GameObject pigObject in pigs)
         {
             GameObject pig = Instantiate(pigObject, transform.position + hutSpawnOffset, Quaternion.identity);
-            if (LevelManager.S.isFinalLevel) pig.GetComponent<Pig>().RunAroundForever(hutSpawnDirection, 3.0f, 2.0f);
+            if (isLoss) pig.GetComponent<Pig>().RunAroundForever(hutSpawnDirection, 3.0f, 2.0f);
             else pig.GetComponent<Pig>().SetCurrentDirection(hutSpawnDirection);
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
-        GameManager.S.OnHutDestroyed();
+        if (isLoss) UIManager.S.ShowLosingPanel();
         Destroy(this.gameObject, 1.0f);
     }
 
