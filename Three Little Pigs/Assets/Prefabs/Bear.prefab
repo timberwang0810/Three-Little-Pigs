@@ -125,6 +125,8 @@ MonoBehaviour:
   attackCooldown: 2
   enemyType: 1
   initialDirection: {x: -1, y: 0}
+  moneyStack: {fileID: 6359448378077806151, guid: dadf07a73414c1b4c9f386a426acdae1, type: 3}
+  numStacks: 3
 --- !u!70 &7372118587908402624
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

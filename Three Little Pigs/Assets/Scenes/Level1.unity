@@ -14521,7 +14521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: yOffset
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: maxSpawnRate
@@ -14621,7 +14621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.04
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: m_LocalPosition.z

@@ -142,6 +142,8 @@ MonoBehaviour:
   attackCooldown: 1
   enemyType: 2
   initialDirection: {x: -1, y: 0}
+  moneyStack: {fileID: 6359448378077806151, guid: dadf07a73414c1b4c9f386a426acdae1, type: 3}
+  numStacks: 2
 --- !u!50 &4286181303967935667
 Rigidbody2D:
   serializedVersion: 4
