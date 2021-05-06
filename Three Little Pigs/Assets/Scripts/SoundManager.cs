@@ -42,6 +42,7 @@ public class SoundManager : MonoBehaviour
     // UI sfx
     public AudioClip UIConfirmSFX;
     public AudioClip UIExitSFX;
+    public AudioClip FinalWaveSFX;
 
     private void Awake()
     {
@@ -146,6 +147,11 @@ public class SoundManager : MonoBehaviour
     {
         audio.volume = sfxVolume;
         quieterAudio.volume = sfxVolume * 0.3f;
+    }
+
+    public void OnFinalWave()
+    {
+        audio.PlayOneShot(FinalWaveSFX);
     }
 }
 

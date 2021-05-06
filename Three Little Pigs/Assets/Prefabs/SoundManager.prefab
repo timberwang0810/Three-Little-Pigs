@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e185e0deffc614f9260ceb527bdb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
   TurretBuildSFX: {fileID: 8300000, guid: 530c336619550114d8e460d0573e4e3d, type: 3}
   StrawTurretFireSFX: {fileID: 8300000, guid: 466aeebd080b79b41a192063df392bbb, type: 3}
   WoodTurretFireSFX: {fileID: 8300000, guid: 0ef6c6a951d8dff49abd03c2c3760b61, type: 3}
@@ -81,6 +82,7 @@ MonoBehaviour:
   quieterAudio: {fileID: -797579463222017999}
   UIConfirmSFX: {fileID: 8300000, guid: d1852478b206d2147b91209804c3cd4b, type: 3}
   UIExitSFX: {fileID: 8300000, guid: 9f4f9daa566906748af0d487d67e0d65, type: 3}
+  FinalWaveSFX: {fileID: 8300000, guid: 1db3c215ffca0a841bd4741a98cbaf27, type: 3}
 --- !u!82 &998571014767715405
 AudioSource:
   m_ObjectHideFlags: 0
