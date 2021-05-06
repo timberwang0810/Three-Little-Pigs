@@ -112,6 +112,15 @@ public class Pig : MonoBehaviour
     private IEnumerator RunAroundCoroutine(Vector2 initDirection, float timeBetweenTurning)
     {
         currDirection = initDirection;
+        if (currDirection.x == -1)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        if (currDirection.x == 1)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
         float timer = 0;
         while (true)
         {

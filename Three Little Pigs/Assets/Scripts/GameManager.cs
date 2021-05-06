@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private int numEnemies;
     private bool isSpawning;
 
+    private bool isEnemiesCleared = false;
+
     private int finishedSpawners = 0;
 
     private void Awake()
@@ -71,11 +73,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ResetLevel()
+    public IEnumerator ResetLevel()
     {
         isSpawning = true;
+        isEnemiesCleared = false;
         finishedSpawners = 0;
         numEnemies = 0;
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Build Phase", 0.1f, 2.0f));
         gameState = GameState.playing;
     }
 
@@ -113,8 +117,10 @@ public class GameManager : MonoBehaviour
     private void OnEnemiesCleared()
     {
         Debug.Log("level complete!");
+        if (isEnemiesCleared) return;
+        isEnemiesCleared = true;
         if (LevelManager.S.isFinalLevel) OnLevelWon();
-        else FloodEnemies();
+        else StartCoroutine(FloodEnemies());
     }
 
     private void OnLevelCleared()
@@ -126,13 +132,15 @@ public class GameManager : MonoBehaviour
     private void OnLevelWon()
     {
         // TODO: On final level when enemies are dead
+        gameState = GameState.gameOver;
         LevelManager.S.hut.GetComponent<Hut>().OnPigsVictory();
     }
 
     private void OnLevelLost()
     {
         // TODO: On final level when the brick hut is destroyed
-        StartCoroutine(LevelLostCoroutine());
+        gameState = GameState.gameOver;
+        StartCoroutine(LevelManager.S.hut.GetComponent<Hut>().ReleasePigs(true));
     }
 
     public void AddMoney(int amount)
@@ -147,8 +155,9 @@ public class GameManager : MonoBehaviour
         UIManager.S.UpdateMoney(money);
     }
 
-    private void FloodEnemies()
+    private IEnumerator FloodEnemies()
     {
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Final Wave Incoming!!!", 0.1f, 2.5f));
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
         for (int i = 0; i < LevelManager.S.spawners.Length; i++)
         {
@@ -157,22 +166,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator LevelLostCoroutine()
-    {
-        yield return new WaitForSeconds(3.0f);
-        LevelManager.S.RestartLevel();
-        ResetMoney();
-        ResetLevel();
-    }
-
     private IEnumerator LevelCompleteCoroutine()
     {
+        yield return StartCoroutine(LevelManager.S.hut.GetComponent<Hut>().ReleasePigs(false));
         yield return new WaitForSeconds(3.0f);
         LevelManager.S.GoToNextLevel();
         yield return new WaitForSeconds(2.0f);
         ResetMoney();
         ResetLevel();
     }
+
 
     private void ResetMoney()
     {
