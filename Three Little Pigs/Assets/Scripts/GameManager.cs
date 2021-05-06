@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private bool isSpawning;
 
     private bool isEnemiesCleared = false;
+    private bool isFlooding = false;
 
     private int finishedSpawners = 0;
 
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
     {
         isSpawning = true;
         isEnemiesCleared = false;
+        isFlooding = false;
         finishedSpawners = 0;
         numEnemies = 0;
         ResetMoney();
@@ -88,7 +90,7 @@ public class GameManager : MonoBehaviour
     public void OnEnemiesFinishedSpawning()
     {
         finishedSpawners++;
-        //Debug.Log("done spawning " + finishedSpawners);
+        Debug.Log("done spawning " + finishedSpawners);
         if (finishedSpawners == LevelManager.S.spawners.Length) isSpawning = false;
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
     }
@@ -102,9 +104,10 @@ public class GameManager : MonoBehaviour
     public void OnEnemyDeath(int amount)
     {
         numEnemies--;
-        //sDebug.Log("died " + numEnemies);
+       // Debug.Log("died " + numEnemies);
         money += amount;
         UIManager.S.UpdateMoney(money);
+        //Debug.Log("isSpawning: " + isSpawning + ", numEnmies: " + numEnemies);
         if (!isSpawning && numEnemies <= 0) OnEnemiesCleared();
     }
 
@@ -121,8 +124,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("level complete!");
         if (isEnemiesCleared) return;
         isEnemiesCleared = true;
-        if (LevelManager.S.isFinalLevel) OnLevelWon();
+        if (isFlooding) OnLevelWon();
         else StartCoroutine(FloodEnemies());
+        //if (LevelManager.S.isFinalLevel) OnLevelWon();
+        //else StartCoroutine(FloodEnemies());
     }
 
     private void OnLevelCleared()
@@ -160,12 +165,17 @@ public class GameManager : MonoBehaviour
     private IEnumerator FloodEnemies()
     {
         SoundManager.S.OnFinalWave();
+        isFlooding = true;
+        isEnemiesCleared = false;
+        isSpawning = true;
+        finishedSpawners = 0;
         yield return StartCoroutine(UIManager.S.FlashMiddleText("Final Wave Incoming!!!", 0.25f, 2.5f));
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
         for (int i = 0; i < LevelManager.S.spawners.Length; i++)
         {
             Debug.Log("flod");
-            LevelManager.S.spawners[i].GetComponent<Spawner>().Flood();
+            if (LevelManager.S.isFinalLevel) LevelManager.S.spawners[i].GetComponent<Spawner>().Flood(LevelManager.S.floodTime);
+            else LevelManager.S.spawners[i].GetComponent<Spawner>().Flood();
         }
     }
 

@@ -799,6 +799,7 @@ MonoBehaviour:
   currLevel: 3
   currLevelName: Level 3
   isFinalLevel: 1
+  floodTime: 10
   spawners:
   - {fileID: 371743553}
   - {fileID: 420648874}
