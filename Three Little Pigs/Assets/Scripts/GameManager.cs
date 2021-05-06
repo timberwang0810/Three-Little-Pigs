@@ -127,13 +127,15 @@ public class GameManager : MonoBehaviour
     private void OnLevelWon()
     {
         // TODO: On final level when enemies are dead
+        gameState = GameState.gameOver;
         LevelManager.S.hut.GetComponent<Hut>().OnPigsVictory();
     }
 
     private void OnLevelLost()
     {
         // TODO: On final level when the brick hut is destroyed
-        StartCoroutine(LevelLostCoroutine());
+        gameState = GameState.gameOver;
+        UIManager.S.ShowLosingPanel();
     }
 
     public void AddMoney(int amount)
@@ -157,14 +159,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("flod");
             LevelManager.S.spawners[i].GetComponent<Spawner>().Flood();
         }
-    }
-
-    private IEnumerator LevelLostCoroutine()
-    {
-        yield return new WaitForSeconds(3.0f);
-        LevelManager.S.RestartLevel();
-        ResetMoney();
-        ResetLevel();
     }
 
     private IEnumerator LevelCompleteCoroutine()

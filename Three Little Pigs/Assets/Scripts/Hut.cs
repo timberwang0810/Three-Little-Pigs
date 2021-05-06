@@ -29,7 +29,7 @@ public class Hut : MonoBehaviour
             isDestroyed = true;
             UIManager.S.AdjustHealthBar(0);
             GetComponent<SpriteRenderer>().enabled = false;
-            Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset, 5);
+            Camera.main.GetComponent<CameraPan>().PanTo(transform.position + hutSpawnOffset * 3, 5);
             StartCoroutine(ReleasePigs());
         }
     }

@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject settingsPanel;
 
     public GameObject winningPanel;
+    public GameObject losingPanel;
 
     [Header("Sell Panel")]
     public GameObject sellPanel;
@@ -47,6 +48,7 @@ public class UIManager : MonoBehaviour
         sellPanel.SetActive(false);
         settingsPanel.SetActive(false);
         winningPanel.SetActive(false);
+        losingPanel.SetActive(false);
         middleText.enabled = false;
         healthBar.fillAmount = 1;
         healthBar.color = maxHealthColor;
@@ -80,6 +82,7 @@ public class UIManager : MonoBehaviour
         HidePausePanel();
         HideSellPanel();
         winningPanel.SetActive(false);
+        losingPanel.SetActive(false);
         middleText.enabled = false;
     }
 
@@ -132,6 +135,11 @@ public class UIManager : MonoBehaviour
     public void ShowWinningPanel()
     {
         winningPanel.SetActive(true);
+    }
+
+    public void ShowLosingPanel()
+    {
+        losingPanel.SetActive(true);
     }
 
     private IEnumerator FlashMoneyText(GameObject moneyFlashTextObject)
