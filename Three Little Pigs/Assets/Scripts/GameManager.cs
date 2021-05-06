@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         isEnemiesCleared = false;
         finishedSpawners = 0;
         numEnemies = 0;
-        yield return StartCoroutine(UIManager.S.FlashMiddleText("Build Phase", 0.1f, 2.0f));
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Build Phase", 0.25f, 2.0f));
         gameState = GameState.playing;
     }
 
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator FloodEnemies()
     {
-        yield return StartCoroutine(UIManager.S.FlashMiddleText("Final Wave Incoming!!!", 0.1f, 2.5f));
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Final Wave Incoming!!!", 0.25f, 2.5f));
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
         for (int i = 0; i < LevelManager.S.spawners.Length; i++)
         {

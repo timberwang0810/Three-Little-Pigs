@@ -2958,6 +2958,10 @@ PrefabInstance:
       propertyPath: pigPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 3453832308992048005, guid: 256dc7d3d6f944c0394d179f67e4e6af, type: 3}
+    - target: {fileID: 133690187713506752, guid: 226568759b6de4a2181625425e34cd45, type: 3}
+      propertyPath: isFlipSpriteUponSpawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 133690187713506753, guid: 226568759b6de4a2181625425e34cd45, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.27

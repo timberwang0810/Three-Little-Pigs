@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
     public Vector2 spawnDirection;
     public float xOffset;
     public float yOffset;
+    public bool isFlipSpriteUponSpawn;
 
     private Dictionary<GameObject, int> maxEnemies = new Dictionary<GameObject, int>();
     private Dictionary<string, int> currEnemies = new Dictionary<string, int>();
@@ -76,6 +77,7 @@ public class Spawner : MonoBehaviour
         foreach (GameObject pigObject in pigPrefabs)
         {
             GameObject pig = Instantiate(pigObject, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
+            if (isFlipSpriteUponSpawn) pig.GetComponent<SpriteRenderer>().flipX = true;
             pig.GetComponent<Pig>().SetCurrentDirection(spawnDirection);
             yield return new WaitForSeconds(spawnRate);
         }
@@ -108,6 +110,7 @@ public class Spawner : MonoBehaviour
         }
         // Instantiate enemy at spawn location
         GameObject enemy = Instantiate(enemyPrefab, new Vector3(Random.Range(transform.position.x - xOffset, transform.position.x + xOffset), Random.Range(transform.position.y - yOffset, transform.position.y + yOffset), 0), Quaternion.identity);
+        if (isFlipSpriteUponSpawn) enemy.GetComponent<SpriteRenderer>().flipX = true;
         if (enemy.GetComponent<Enemy>().enemyType == EnemyType.WOLF && SceneManager.GetActiveScene().name == "Level1")
         {
             enemy.GetComponent<Enemy>().speed = 2;
