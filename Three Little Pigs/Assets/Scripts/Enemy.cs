@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float attackCooldown;
     public EnemyType enemyType;
     public Vector2 initialDirection;
+    public GameObject moneyStack;
+    public int numStacks;
 
     private float currHP;
     private bool isDead = false;
@@ -74,6 +76,7 @@ public class Enemy : MonoBehaviour
             SoundManager.S.MakeDeathSound(enemyType);
             GameManager.S.OnEnemyDeath(money);
             UIManager.S.ShowMoneyFlashText(money, transform.position);
+            SpawnMoney();
             Destroy(this.gameObject, 1.0f);
         }
     }
@@ -152,5 +155,14 @@ public class Enemy : MonoBehaviour
     public bool GetAttacking()
     {
         return attacking;
+    }
+
+    private void SpawnMoney()
+    {
+        for (int i = 0; i < numStacks; i++)
+        {
+            GameObject spawnedStack = Instantiate(moneyStack, transform.position, Quaternion.identity);
+            Destroy(spawnedStack, 1);
+        }
     }
 }
