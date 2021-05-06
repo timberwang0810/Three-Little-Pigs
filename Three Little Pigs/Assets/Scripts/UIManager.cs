@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public Color maxHealthColor;
 
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI middleText;
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
         pausePanel.SetActive(false);
         sellPanel.SetActive(false);
         settingsPanel.SetActive(false);
+        middleText.enabled = false;
         healthBar.fillAmount = 1;
         healthBar.color = maxHealthColor;
     }
@@ -74,6 +76,7 @@ public class UIManager : MonoBehaviour
     {
         HidePausePanel();
         HideSellPanel();
+        middleText.enabled = false;
     }
 
     public void AdjustHealthBar(float amount)
@@ -138,5 +141,33 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         Destroy(moneyFlashTextObject);
+    }
+
+    public IEnumerator FlashMiddleText(string message)
+    {
+        middleText.text = message;
+        middleText.enabled = true;
+        middleText.transform.position = new Vector3(-21, middleText.transform.position.y, middleText.transform.position.z);
+        float timer = 0;
+        while (timer < 1)
+        {
+            timer += Time.deltaTime;
+            Vector3 newLocation = middleText.transform.position;
+            newLocation.x = Mathf.Lerp(-21, 0, timer / 1);
+            middleText.transform.position = newLocation;
+            yield return null;
+        }
+        middleText.transform.position = new Vector3(0, middleText.transform.position.y, middleText.transform.position.z);
+        yield return new WaitForSeconds(2.0f);
+        timer = 0;
+        while (timer < 1)
+        {
+            timer += Time.deltaTime;
+            Vector3 newLocation = middleText.transform.position;
+            newLocation.x = Mathf.Lerp(0, 21, timer / 1);
+            middleText.transform.position = newLocation;
+            yield return null;
+        }
+        middleText.enabled = false;
     }
 }

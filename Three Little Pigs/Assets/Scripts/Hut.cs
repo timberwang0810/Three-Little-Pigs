@@ -37,7 +37,7 @@ public class Hut : MonoBehaviour
     public void OnPigEntered()
     {
         currPigs++;
-        if (currPigs == pigs.Length) GameManager.S.ResetLevel();
+        if (currPigs == pigs.Length) StartCoroutine(GameManager.S.ResetLevel());
     }
 
     public void OnPigsVictory()

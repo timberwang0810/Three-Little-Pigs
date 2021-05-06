@@ -71,11 +71,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ResetLevel()
+    public IEnumerator ResetLevel()
     {
         isSpawning = true;
         finishedSpawners = 0;
         numEnemies = 0;
+        yield return StartCoroutine(UIManager.S.FlashMiddleText("Build Phase"));
         gameState = GameState.playing;
     }
 
