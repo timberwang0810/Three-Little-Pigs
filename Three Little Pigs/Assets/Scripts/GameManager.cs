@@ -165,10 +165,13 @@ public class GameManager : MonoBehaviour
     private IEnumerator FloodEnemies()
     {
         SoundManager.S.OnFinalWave();
-        isFlooding = true;
-        isEnemiesCleared = false;
-        isSpawning = true;
-        finishedSpawners = 0;
+        if (LevelManager.S.isFinalLevel)
+        {
+            isFlooding = true;
+            isEnemiesCleared = false;
+            isSpawning = true;
+            finishedSpawners = 0;
+        }
         yield return StartCoroutine(UIManager.S.FlashMiddleText("Final Wave Incoming!!!", 0.25f, 2.5f));
         // TODO: Enemy Flooding Mechanism. Tell the spawner to flood enemies
         for (int i = 0; i < LevelManager.S.spawners.Length; i++)
