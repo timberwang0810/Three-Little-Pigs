@@ -1391,6 +1391,7 @@ MonoBehaviour:
   currLevel: 1
   currLevelName: Level 1
   isFinalLevel: 0
+  floodTime: 0
   spawners:
   - {fileID: 1146737789}
   hut: {fileID: 2954328813776326399}
