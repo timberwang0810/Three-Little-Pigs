@@ -140,6 +140,9 @@ public class GameManager : MonoBehaviour
     {
         // TODO: On final level when enemies are dead
         gameState = GameState.gameOver;
+
+        SoundManager.S.OnWinGame();
+
         LevelManager.S.hut.GetComponent<Hut>().OnPigsVictory();
     }
 
@@ -147,6 +150,7 @@ public class GameManager : MonoBehaviour
     {
         // TODO: On final level when the brick hut is destroyed
         gameState = GameState.gameOver;
+        SoundManager.S.OnLoseGame();
         StartCoroutine(LevelManager.S.hut.GetComponent<Hut>().ReleasePigs(true));
     }
 
