@@ -83,6 +83,8 @@ MonoBehaviour:
   UIConfirmSFX: {fileID: 8300000, guid: d1852478b206d2147b91209804c3cd4b, type: 3}
   UIExitSFX: {fileID: 8300000, guid: 9f4f9daa566906748af0d487d67e0d65, type: 3}
   FinalWaveSFX: {fileID: 8300000, guid: 1db3c215ffca0a841bd4741a98cbaf27, type: 3}
+  WinSFX: {fileID: 8300000, guid: b8e53340cddb47344b5fd24cfac8e7fd, type: 3}
+  LoseSFX: {fileID: 8300000, guid: 9b240a6c3652d7743816637e3a8af423, type: 3}
 --- !u!82 &998571014767715405
 AudioSource:
   m_ObjectHideFlags: 0

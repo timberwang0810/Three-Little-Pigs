@@ -44,6 +44,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip UIExitSFX;
     public AudioClip FinalWaveSFX;
 
+    //Game state sfx
+    public AudioClip WinSFX;
+    public AudioClip LoseSFX;
+
     private void Awake()
     {
         // Singleton Definition
@@ -152,6 +156,16 @@ public class SoundManager : MonoBehaviour
     public void OnFinalWave()
     {
         audio.PlayOneShot(FinalWaveSFX);
+    }
+
+    public void OnWinGame()
+    {
+        audio.PlayOneShot(WinSFX);
+    }
+
+    public void OnLoseGame()
+    {
+        audio.PlayOneShot(LoseSFX);
     }
 }
 
