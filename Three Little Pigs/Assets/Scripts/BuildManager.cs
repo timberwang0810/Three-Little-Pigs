@@ -94,6 +94,7 @@ public class BuildManager : MonoBehaviour
         if (GameManager.S.gameState != GameManager.GameState.playing) return;
 
         if (building != null) Destroy(building);
+        UIManager.S.HideSellPanel();
 
         GameObject turretType = MatchTurret((Material)Enum.Parse(typeof(Material), material.ToUpper()));
         if (GameManager.S.money >= turretType.GetComponent<Turret>().cost)
