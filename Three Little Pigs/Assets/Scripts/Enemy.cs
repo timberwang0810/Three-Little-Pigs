@@ -49,6 +49,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.S.gameState != GameManager.GameState.playing)
+        {
+            speed = 0;
+            StopAllCoroutines();
+            return;
+        }
     }
 
     public void TakeDamage(float damage)
@@ -121,12 +127,12 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GameManager.S.gameState != GameManager.GameState.playing) return;
         rb.velocity = currDirection * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (GameManager.S.gameState != GameManager.GameState.playing) return;
         if (collision.gameObject.CompareTag("Hut"))
         {
             animator.SetBool("walking", false);

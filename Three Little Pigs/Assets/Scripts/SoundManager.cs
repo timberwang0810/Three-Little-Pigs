@@ -160,12 +160,21 @@ public class SoundManager : MonoBehaviour
 
     public void OnWinGame()
     {
+        audio.Stop();
+        quieterAudio.Stop();
         audio.PlayOneShot(WinSFX);
     }
 
     public void OnLoseGame()
     {
+        audio.Stop();
+        quieterAudio.Stop();
         audio.PlayOneShot(LoseSFX);
+    }
+
+    public void StopBGM()
+    {
+        BGM.Stop();
     }
 }
 
