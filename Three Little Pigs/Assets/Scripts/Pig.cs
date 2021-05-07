@@ -44,6 +44,15 @@ public class Pig : MonoBehaviour
     public void SetCurrentDirection(Vector2 newDir)
     {
         currDirection = newDir;
+        if (currDirection.x == -1)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        if (currDirection.x == 1)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     public void RunAroundForever(Vector3 initDirection, float runSpeed, float timeBetweenTurning)
