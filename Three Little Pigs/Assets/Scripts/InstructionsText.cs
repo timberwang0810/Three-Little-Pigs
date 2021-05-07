@@ -8,6 +8,7 @@ public class InstructionsText : MonoBehaviour
     public TextMeshProUGUI instructionsText;
 
     List<string> pages = new List<string>();
+    public GameObject[] images;
     private int listLength;
     private int curPage = 0;
 
@@ -24,17 +25,21 @@ public class InstructionsText : MonoBehaviour
 
     public void btn_Prev()
     {
+        images[curPage].SetActive(false);
         curPage--;
         if (curPage < 0) curPage = listLength - 1;
 
         instructionsText.text = pages[curPage];
+        images[curPage].SetActive(true);
     }
 
     public void btn_Next()
     {
+        images[curPage].SetActive(false);
         curPage++;
         if (curPage >= listLength) curPage = 0;
 
         instructionsText.text = pages[curPage];
+        images[curPage].SetActive(true);
     }
 }
